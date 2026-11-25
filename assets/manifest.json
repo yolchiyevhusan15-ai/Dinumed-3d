@@ -1,0 +1,890 @@
+{
+  "name": "DINUMED 3D avatar asset package",
+  "version": "1.0.0",
+  "generator": "source/generator/build.py (procedural, deterministic)",
+  "license": "CC0-1.0 (assets) - see LICENSE.md; three.js MIT - see vendor/three/LICENSE",
+  "threeVersion": "0.187.0",
+  "units": "metres",
+  "coordinateSystem": "glTF 2.0: +Y up, characters face +Z, character left = +X",
+  "bindPose": "A-pose (arms 45 degrees below horizontal); all bone rest rotations are identity",
+  "skeleton": {
+    "boneCount": 55,
+    "jointOrder": [
+      "Hips",
+      "Spine",
+      "Spine1",
+      "Spine2",
+      "Neck",
+      "Head",
+      "HeadTop_End",
+      "LeftShoulder",
+      "LeftArm",
+      "LeftForeArm",
+      "LeftHand",
+      "LeftHandThumb1",
+      "LeftHandThumb2",
+      "LeftHandThumb3",
+      "LeftHandIndex1",
+      "LeftHandIndex2",
+      "LeftHandIndex3",
+      "LeftHandMiddle1",
+      "LeftHandMiddle2",
+      "LeftHandMiddle3",
+      "LeftHandRing1",
+      "LeftHandRing2",
+      "LeftHandRing3",
+      "LeftHandPinky1",
+      "LeftHandPinky2",
+      "LeftHandPinky3",
+      "RightShoulder",
+      "RightArm",
+      "RightForeArm",
+      "RightHand",
+      "RightHandThumb1",
+      "RightHandThumb2",
+      "RightHandThumb3",
+      "RightHandIndex1",
+      "RightHandIndex2",
+      "RightHandIndex3",
+      "RightHandMiddle1",
+      "RightHandMiddle2",
+      "RightHandMiddle3",
+      "RightHandRing1",
+      "RightHandRing2",
+      "RightHandRing3",
+      "RightHandPinky1",
+      "RightHandPinky2",
+      "RightHandPinky3",
+      "LeftUpLeg",
+      "LeftLeg",
+      "LeftFoot",
+      "LeftToeBase",
+      "LeftToe_End",
+      "RightUpLeg",
+      "RightLeg",
+      "RightFoot",
+      "RightToeBase",
+      "RightToe_End"
+    ],
+    "naming": "Mixamo-style names without prefix; identical joint order and names in every GLB"
+  },
+  "characters": [
+    {
+      "id": "male",
+      "file": "assets/characters/male.glb",
+      "bytes": 1990744,
+      "sizeKB": 1944.1,
+      "sha256": "be51680526c90607cb13d0724659cb8fde38512d5134a72e6fb4464995a6c06f",
+      "vertices": 32397,
+      "triangles": 63238,
+      "meshes": [
+        {
+          "name": "Body",
+          "vertices": 23002,
+          "triangles": 46000,
+          "material": "Skin"
+        },
+        {
+          "name": "Eyes",
+          "vertices": 850,
+          "triangles": 1440,
+          "material": "Eye"
+        },
+        {
+          "name": "Hair",
+          "vertices": 5241,
+          "triangles": 9798,
+          "material": "Hair"
+        },
+        {
+          "name": "Underwear",
+          "vertices": 3304,
+          "triangles": 6000,
+          "material": "Underwear"
+        }
+      ],
+      "textures": [
+        "iris_male"
+      ],
+      "animations": [
+        "Idle"
+      ],
+      "joints": 55,
+      "shoeGroundOffset": 0.016,
+      "heightMetres": 1.78
+    },
+    {
+      "id": "female",
+      "file": "assets/characters/female.glb",
+      "bytes": 2142800,
+      "sizeKB": 2092.6,
+      "sha256": "056d197ae5b46277f590cfbef1d7bc7b5c2ba05ba4568d2e9ed6744548d56f8f",
+      "vertices": 35166,
+      "triangles": 68236,
+      "meshes": [
+        {
+          "name": "Body",
+          "vertices": 23002,
+          "triangles": 46000,
+          "material": "Skin"
+        },
+        {
+          "name": "Eyes",
+          "vertices": 850,
+          "triangles": 1440,
+          "material": "Eye"
+        },
+        {
+          "name": "Hair",
+          "vertices": 5250,
+          "triangles": 9799,
+          "material": "Hair"
+        },
+        {
+          "name": "Underwear",
+          "vertices": 6064,
+          "triangles": 10997,
+          "material": "Underwear"
+        }
+      ],
+      "textures": [
+        "iris_female"
+      ],
+      "animations": [
+        "Idle"
+      ],
+      "joints": 55,
+      "shoeGroundOffset": 0.016,
+      "heightMetres": 1.665
+    }
+  ],
+  "clothing": [
+    {
+      "id": "scrubs_top",
+      "title": "Surgical scrubs (top)",
+      "slot": "torso-mid",
+      "files": {
+        "male": "assets/clothing/male/scrubs_top.glb",
+        "female": "assets/clothing/female/scrubs_top.glb"
+      },
+      "details": {
+        "male": {
+          "bytes": 418256,
+          "sizeKB": 408.5,
+          "sha256": "3075ac5e4066526987cca330be2c8513cd727ff1f1137bc58dcf999982d839d2",
+          "vertices": 7345,
+          "triangles": 13998,
+          "meshes": [
+            {
+              "name": "ScrubsTop",
+              "vertices": 7345,
+              "triangles": 13998,
+              "material": "ScrubsTop"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        },
+        "female": {
+          "bytes": 418304,
+          "sizeKB": 408.5,
+          "sha256": "b38e5632a3d5e797a0c7bff9b42ffa4b98e501f99028038e5644989942993ae1",
+          "vertices": 7345,
+          "triangles": 13998,
+          "meshes": [
+            {
+              "name": "ScrubsTop",
+              "vertices": 7345,
+              "triangles": 13998,
+              "material": "ScrubsTop"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        }
+      }
+    },
+    {
+      "id": "medical_trousers",
+      "title": "Medical trousers (scrub pants)",
+      "slot": "legs",
+      "files": {
+        "male": "assets/clothing/male/medical_trousers.glb",
+        "female": "assets/clothing/female/medical_trousers.glb"
+      },
+      "details": {
+        "male": {
+          "bytes": 411204,
+          "sizeKB": 401.6,
+          "sha256": "958292ac8e88705bf5f87b4c49845e139c5236cea8f1a2532d49ddf1958965c8",
+          "vertices": 7184,
+          "triangles": 14000,
+          "meshes": [
+            {
+              "name": "MedicalTrousers",
+              "vertices": 7184,
+              "triangles": 14000,
+              "material": "MedicalTrousers"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        },
+        "female": {
+          "bytes": 412084,
+          "sizeKB": 402.4,
+          "sha256": "39e476967b576a76bc7fb42f361609a43b3d92b43a8129cdc24eefd55791926b",
+          "vertices": 7203,
+          "triangles": 13999,
+          "meshes": [
+            {
+              "name": "MedicalTrousers",
+              "vertices": 7203,
+              "triangles": 13999,
+              "material": "MedicalTrousers"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        }
+      }
+    },
+    {
+      "id": "white_coat",
+      "title": "White medical coat",
+      "slot": "torso-outer",
+      "files": {
+        "male": "assets/clothing/male/white_coat.glb",
+        "female": "assets/clothing/female/white_coat.glb"
+      },
+      "details": {
+        "male": {
+          "bytes": 719724,
+          "sizeKB": 702.9,
+          "sha256": "2a2c3a484b0eb58e4a656b1231389b537311e4f539f805eb8e4b89662e10efb9",
+          "vertices": 12700,
+          "triangles": 24319,
+          "meshes": [
+            {
+              "name": "WhiteCoat",
+              "vertices": 12372,
+              "triangles": 23999,
+              "material": "WhiteCoat"
+            },
+            {
+              "name": "CoatButtons",
+              "vertices": 328,
+              "triangles": 320,
+              "material": "CoatButtons"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        },
+        "female": {
+          "bytes": 718900,
+          "sizeKB": 702.1,
+          "sha256": "d1c94f410c9a6a97e9468fefcd3eef0a48a2dedaa8818feb93cf3f61ce87954e",
+          "vertices": 12680,
+          "triangles": 24320,
+          "meshes": [
+            {
+              "name": "WhiteCoat",
+              "vertices": 12352,
+              "triangles": 24000,
+              "material": "WhiteCoat"
+            },
+            {
+              "name": "CoatButtons",
+              "vertices": 328,
+              "triangles": 320,
+              "material": "CoatButtons"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        }
+      }
+    },
+    {
+      "id": "medical_shoes",
+      "title": "Medical shoes",
+      "slot": "feet",
+      "files": {
+        "male": "assets/clothing/male/medical_shoes.glb",
+        "female": "assets/clothing/female/medical_shoes.glb"
+      },
+      "details": {
+        "male": {
+          "bytes": 353156,
+          "sizeKB": 344.9,
+          "sha256": "bc36a2a52deaef7cb4f660ca7e33b65260327b3fb206572a4752560e554d37b1",
+          "vertices": 6138,
+          "triangles": 11998,
+          "meshes": [
+            {
+              "name": "MedicalShoes",
+              "vertices": 6138,
+              "triangles": 11998,
+              "material": "MedicalShoes"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        },
+        "female": {
+          "bytes": 352248,
+          "sizeKB": 344.0,
+          "sha256": "5f043ceb4a1b51ee9d1fb2ee79a4d66e4b9290479cf9e45eed45965af8b52498",
+          "vertices": 6116,
+          "triangles": 11999,
+          "meshes": [
+            {
+              "name": "MedicalShoes",
+              "vertices": 6116,
+              "triangles": 11999,
+              "material": "MedicalShoes"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        }
+      }
+    },
+    {
+      "id": "medical_cap",
+      "title": "Medical (scrub) cap",
+      "slot": "head",
+      "files": {
+        "male": "assets/clothing/male/medical_cap.glb",
+        "female": "assets/clothing/female/medical_cap.glb"
+      },
+      "details": {
+        "male": {
+          "bytes": 215400,
+          "sizeKB": 210.4,
+          "sha256": "06966c1d82adc26a0aae95edbd1dc5ea68997c3bbf79275d4251a737db43c70d",
+          "vertices": 3689,
+          "triangles": 6999,
+          "meshes": [
+            {
+              "name": "MedicalCap",
+              "vertices": 3689,
+              "triangles": 6999,
+              "material": "MedicalCap"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        },
+        "female": {
+          "bytes": 217084,
+          "sizeKB": 212.0,
+          "sha256": "139ffb3831744f89274ad61d0be9064b6f4f6959d76d1578568fee690ee26f44",
+          "vertices": 3726,
+          "triangles": 7000,
+          "meshes": [
+            {
+              "name": "MedicalCap",
+              "vertices": 3726,
+              "triangles": 7000,
+              "material": "MedicalCap"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        }
+      }
+    },
+    {
+      "id": "stethoscope",
+      "title": "Stethoscope",
+      "slot": "neck-accessory",
+      "variants": {
+        "over_coat": {
+          "description": "fitted to rest on the white coat",
+          "files": {
+            "male": "assets/clothing/male/stethoscope_over_coat.glb",
+            "female": "assets/clothing/female/stethoscope_over_coat.glb"
+          },
+          "details": {
+            "male": {
+              "bytes": 184892,
+              "sizeKB": 180.6,
+              "sha256": "0016184c36d6fd38ea36e00520e56f4776f5424df817353f3c619436b2bd667f",
+              "vertices": 3093,
+              "triangles": 5894,
+              "meshes": [
+                {
+                  "name": "StethoscopeTubing",
+                  "vertices": 2202,
+                  "triangles": 4360,
+                  "material": "StethoscopeTubing"
+                },
+                {
+                  "name": "StethoscopeMetal",
+                  "vertices": 688,
+                  "triangles": 1136,
+                  "material": "StethoscopeMetal"
+                },
+                {
+                  "name": "StethoscopeEartips",
+                  "vertices": 203,
+                  "triangles": 398,
+                  "material": "StethoscopeEartips"
+                }
+              ],
+              "textures": [],
+              "animations": [],
+              "joints": 55
+            },
+            "female": {
+              "bytes": 178276,
+              "sizeKB": 174.1,
+              "sha256": "01965e83063cdcc2186b535ccac9050399b060405660710e4d63d3432c0395a3",
+              "vertices": 2974,
+              "triangles": 5656,
+              "meshes": [
+                {
+                  "name": "StethoscopeTubing",
+                  "vertices": 2082,
+                  "triangles": 4120,
+                  "material": "StethoscopeTubing"
+                },
+                {
+                  "name": "StethoscopeMetal",
+                  "vertices": 688,
+                  "triangles": 1136,
+                  "material": "StethoscopeMetal"
+                },
+                {
+                  "name": "StethoscopeEartips",
+                  "vertices": 204,
+                  "triangles": 400,
+                  "material": "StethoscopeEartips"
+                }
+              ],
+              "textures": [],
+              "animations": [],
+              "joints": 55
+            }
+          }
+        },
+        "over_scrubs": {
+          "description": "fitted to rest on the scrubs top (no coat)",
+          "files": {
+            "male": "assets/clothing/male/stethoscope_over_scrubs.glb",
+            "female": "assets/clothing/female/stethoscope_over_scrubs.glb"
+          },
+          "details": {
+            "male": {
+              "bytes": 177668,
+              "sizeKB": 173.5,
+              "sha256": "d4ff1a9b3449d227912f9b207fc7f717d47f60c7d28fa2ef27161703a6208353",
+              "vertices": 2964,
+              "triangles": 5636,
+              "meshes": [
+                {
+                  "name": "StethoscopeTubing",
+                  "vertices": 2072,
+                  "triangles": 4100,
+                  "material": "StethoscopeTubing"
+                },
+                {
+                  "name": "StethoscopeMetal",
+                  "vertices": 688,
+                  "triangles": 1136,
+                  "material": "StethoscopeMetal"
+                },
+                {
+                  "name": "StethoscopeEartips",
+                  "vertices": 204,
+                  "triangles": 400,
+                  "material": "StethoscopeEartips"
+                }
+              ],
+              "textures": [],
+              "animations": [],
+              "joints": 55
+            },
+            "female": {
+              "bytes": 174916,
+              "sizeKB": 170.8,
+              "sha256": "5fcb78da656fd45b97b66a08a10048392aaf61fdf4538e6aed904feb78dff562",
+              "vertices": 2914,
+              "triangles": 5536,
+              "meshes": [
+                {
+                  "name": "StethoscopeTubing",
+                  "vertices": 2022,
+                  "triangles": 4000,
+                  "material": "StethoscopeTubing"
+                },
+                {
+                  "name": "StethoscopeMetal",
+                  "vertices": 688,
+                  "triangles": 1136,
+                  "material": "StethoscopeMetal"
+                },
+                {
+                  "name": "StethoscopeEartips",
+                  "vertices": 204,
+                  "triangles": 400,
+                  "material": "StethoscopeEartips"
+                }
+              ],
+              "textures": [],
+              "animations": [],
+              "joints": 55
+            }
+          }
+        }
+      },
+      "variantRule": "use over_coat when white_coat is worn, otherwise over_scrubs"
+    },
+    {
+      "id": "glasses",
+      "title": "Glasses",
+      "slot": "face",
+      "files": {
+        "male": "assets/clothing/male/glasses.glb",
+        "female": "assets/clothing/female/glasses.glb"
+      },
+      "details": {
+        "male": {
+          "bytes": 142844,
+          "sizeKB": 139.5,
+          "sha256": "5a779b3b9a7d6ce8e59b19c7b71905f2abe91879568f033d18b0fd76ffd3609d",
+          "vertices": 2340,
+          "triangles": 4408,
+          "meshes": [
+            {
+              "name": "GlassesFrame",
+              "vertices": 2118,
+              "triangles": 4072,
+              "material": "GlassesFrame"
+            },
+            {
+              "name": "GlassesLenses",
+              "vertices": 98,
+              "triangles": 96,
+              "material": "GlassesLenses"
+            },
+            {
+              "name": "GlassesNosePads",
+              "vertices": 124,
+              "triangles": 240,
+              "material": "GlassesNosePads"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        },
+        "female": {
+          "bytes": 142784,
+          "sizeKB": 139.4,
+          "sha256": "df2d220c660a2c9a7a642e3caee9e243fd9f7f067842d0454eaa0c1ed912fcaf",
+          "vertices": 2338,
+          "triangles": 4404,
+          "meshes": [
+            {
+              "name": "GlassesFrame",
+              "vertices": 2118,
+              "triangles": 4072,
+              "material": "GlassesFrame"
+            },
+            {
+              "name": "GlassesLenses",
+              "vertices": 98,
+              "triangles": 96,
+              "material": "GlassesLenses"
+            },
+            {
+              "name": "GlassesNosePads",
+              "vertices": 122,
+              "triangles": 236,
+              "material": "GlassesNosePads"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        }
+      }
+    },
+    {
+      "id": "id_card",
+      "title": "ID card (clip-on badge)",
+      "slot": "chest-accessory",
+      "variants": {
+        "over_coat": {
+          "description": "fitted to rest on the white coat",
+          "files": {
+            "male": "assets/clothing/male/id_card_over_coat.glb",
+            "female": "assets/clothing/female/id_card_over_coat.glb"
+          },
+          "details": {
+            "male": {
+              "bytes": 56556,
+              "sizeKB": 55.2,
+              "sha256": "67662729fe6ecb6559284a67067ddd8382e5466296be3183fe4aa81cd1e69308",
+              "vertices": 422,
+              "triangles": 660,
+              "meshes": [
+                {
+                  "name": "IDCard",
+                  "vertices": 398,
+                  "triangles": 648,
+                  "material": "IDCard"
+                },
+                {
+                  "name": "IDCardClip",
+                  "vertices": 24,
+                  "triangles": 12,
+                  "material": "IDCardClip"
+                }
+              ],
+              "textures": [
+                "id_card_male"
+              ],
+              "animations": [],
+              "joints": 55
+            },
+            "female": {
+              "bytes": 56604,
+              "sizeKB": 55.3,
+              "sha256": "108683f62897f6a3b1abe799323f227cd34147e0a9d6a196b1865135c8df132d",
+              "vertices": 422,
+              "triangles": 660,
+              "meshes": [
+                {
+                  "name": "IDCard",
+                  "vertices": 398,
+                  "triangles": 648,
+                  "material": "IDCard"
+                },
+                {
+                  "name": "IDCardClip",
+                  "vertices": 24,
+                  "triangles": 12,
+                  "material": "IDCardClip"
+                }
+              ],
+              "textures": [
+                "id_card_female"
+              ],
+              "animations": [],
+              "joints": 55
+            }
+          }
+        },
+        "over_scrubs": {
+          "description": "fitted to rest on the scrubs top (no coat)",
+          "files": {
+            "male": "assets/clothing/male/id_card_over_scrubs.glb",
+            "female": "assets/clothing/female/id_card_over_scrubs.glb"
+          },
+          "details": {
+            "male": {
+              "bytes": 56556,
+              "sizeKB": 55.2,
+              "sha256": "f29a698e427afa2a668932c621125c76e3b5c7651eac2715424f892220650b37",
+              "vertices": 422,
+              "triangles": 660,
+              "meshes": [
+                {
+                  "name": "IDCard",
+                  "vertices": 398,
+                  "triangles": 648,
+                  "material": "IDCard"
+                },
+                {
+                  "name": "IDCardClip",
+                  "vertices": 24,
+                  "triangles": 12,
+                  "material": "IDCardClip"
+                }
+              ],
+              "textures": [
+                "id_card_male"
+              ],
+              "animations": [],
+              "joints": 55
+            },
+            "female": {
+              "bytes": 56600,
+              "sizeKB": 55.3,
+              "sha256": "b8bb51cb77707bfca63185e7f8969bcdf22ad652fda879ef09828fcc991daed7",
+              "vertices": 422,
+              "triangles": 660,
+              "meshes": [
+                {
+                  "name": "IDCard",
+                  "vertices": 398,
+                  "triangles": 648,
+                  "material": "IDCard"
+                },
+                {
+                  "name": "IDCardClip",
+                  "vertices": 24,
+                  "triangles": 12,
+                  "material": "IDCardClip"
+                }
+              ],
+              "textures": [
+                "id_card_female"
+              ],
+              "animations": [],
+              "joints": 55
+            }
+          }
+        }
+      },
+      "variantRule": "use over_coat when white_coat is worn, otherwise over_scrubs"
+    },
+    {
+      "id": "watch",
+      "title": "Wrist watch (left wrist)",
+      "slot": "wrist",
+      "files": {
+        "male": "assets/clothing/male/watch.glb",
+        "female": "assets/clothing/female/watch.glb"
+      },
+      "details": {
+        "male": {
+          "bytes": 42880,
+          "sizeKB": 41.9,
+          "sha256": "fa3b02149e7c5160a5ddcee45e1d51b917db58fe44938ccb2fd50fb9d3ef3b0c",
+          "vertices": 435,
+          "triangles": 656,
+          "meshes": [
+            {
+              "name": "WatchStrap",
+              "vertices": 224,
+              "triangles": 448,
+              "material": "WatchStrap"
+            },
+            {
+              "name": "WatchCase",
+              "vertices": 162,
+              "triangles": 160,
+              "material": "WatchCase"
+            },
+            {
+              "name": "WatchDial",
+              "vertices": 49,
+              "triangles": 48,
+              "material": "WatchDial"
+            }
+          ],
+          "textures": [
+            "watch_face"
+          ],
+          "animations": [],
+          "joints": 55
+        },
+        "female": {
+          "bytes": 42936,
+          "sizeKB": 41.9,
+          "sha256": "44c5b88b691533832b6c0eaf03d71f9472c137a2e1729bc543f6b00c52d4090f",
+          "vertices": 435,
+          "triangles": 656,
+          "meshes": [
+            {
+              "name": "WatchStrap",
+              "vertices": 224,
+              "triangles": 448,
+              "material": "WatchStrap"
+            },
+            {
+              "name": "WatchCase",
+              "vertices": 162,
+              "triangles": 160,
+              "material": "WatchCase"
+            },
+            {
+              "name": "WatchDial",
+              "vertices": 49,
+              "triangles": 48,
+              "material": "WatchDial"
+            }
+          ],
+          "textures": [
+            "watch_face"
+          ],
+          "animations": [],
+          "joints": 55
+        }
+      }
+    }
+  ],
+  "animations": [
+    {
+      "id": "idle",
+      "file": "assets/animations/idle.glb",
+      "bytes": 72332,
+      "sizeKB": 70.6,
+      "sha256": "4016475235106c0f63e0d42b165642c6680b61e3df79493005cc5e9f7c4e4370",
+      "vertices": 0,
+      "triangles": 0,
+      "meshes": [],
+      "textures": [],
+      "animations": [
+        "Idle"
+      ],
+      "joints": 0,
+      "durationSeconds": 8.0,
+      "loop": true,
+      "note": "rotation-only tracks; drives both male and female skeletons; also embedded in each character GLB"
+    }
+  ],
+  "textures": [
+    {
+      "file": "assets/textures/id_card_female.png",
+      "bytes": 17938,
+      "sizeKB": 17.5,
+      "sha256": "a4ac1cdf4d5ae12b36dedd200972a24408971671263343de1f9803f4abc39bec",
+      "note": "embedded in the GLB files that use it; provided separately for editing"
+    },
+    {
+      "file": "assets/textures/id_card_male.png",
+      "bytes": 17945,
+      "sizeKB": 17.5,
+      "sha256": "94bc96d5a71b778cad55d126890e61a405166bfb495a63082df9d78aebc5441f",
+      "note": "embedded in the GLB files that use it; provided separately for editing"
+    },
+    {
+      "file": "assets/textures/iris_female.png",
+      "bytes": 5772,
+      "sizeKB": 5.6,
+      "sha256": "eb6bdab241d596b7dada6b41daee9a09470dda5228de64464b18d2884e41531c",
+      "note": "embedded in the GLB files that use it; provided separately for editing"
+    },
+    {
+      "file": "assets/textures/iris_male.png",
+      "bytes": 5606,
+      "sizeKB": 5.5,
+      "sha256": "7dcf6579e4db3699495050d3fa97e60fa366a5a5cf2cc49bb339f94d87999399",
+      "note": "embedded in the GLB files that use it; provided separately for editing"
+    },
+    {
+      "file": "assets/textures/watch_face.png",
+      "bytes": 4262,
+      "sizeKB": 4.2,
+      "sha256": "858f2f6988f3869a8fa234a526b8754a968208ea78206970236b7b2f8c5368c9",
+      "note": "embedded in the GLB files that use it; provided separately for editing"
+    }
+  ],
+  "totalAssetBytes": 9807375
+}

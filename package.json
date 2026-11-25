@@ -1,0 +1,20 @@
+{
+  "name": "dinumed-3d-avatars",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DINUMED offline 3D avatar asset package (rigged GLB characters, clothing, Three.js demo)",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "type": "module",
+  "scripts": {
+    "build:assets": "python3 source/generator/build.py",
+    "serve": "node tools/serve.mjs",
+    "validate": "node tools/validate.mjs",
+    "test": "node tools/validate.mjs && node tests/threejs-test.mjs"
+  },
+  "dependencies": {
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "gltf-validator": "2.0.0-dev.3.10"
+  }
+}

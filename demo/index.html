@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DINUMED Avatar Demo</title>
+<style>
+  :root { --bg:#eef2f4; --panel:#ffffff; --ink:#16232b; --muted:#5b6b75; --accent:#00798c; --line:#d5dde2; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#12181c; --panel:#1b2329; --ink:#e6edf1; --muted:#93a3ad; --accent:#3fb6c9; --line:#2c3840; } }
+  * { box-sizing: border-box; }
+  html, body { margin:0; height:100%; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  #app { display:flex; height:100%; }
+  #panel { width:290px; flex:none; background:var(--panel); border-right:1px solid var(--line); padding:16px; overflow:auto; }
+  #view { flex:1; position:relative; min-width:0; }
+  canvas { display:block; width:100%; height:100%; }
+  h1 { font-size:17px; margin:0 0 2px; letter-spacing:.04em; }
+  .sub { color:var(--muted); font-size:12px; margin-bottom:14px; }
+  h2 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:16px 0 6px; }
+  .seg { display:flex; gap:6px; }
+  .seg button { flex:1; padding:8px; border:1px solid var(--line); background:transparent; color:var(--ink); border-radius:6px; cursor:pointer; font:inherit; }
+  .seg button.on { background:var(--accent); border-color:var(--accent); color:#fff; }
+  label.item { display:flex; align-items:center; gap:8px; padding:5px 0; cursor:pointer; }
+  .row { display:flex; gap:6px; flex-wrap:wrap; }
+  .row button { padding:6px 10px; border:1px solid var(--line); background:transparent; color:var(--ink); border-radius:6px; cursor:pointer; font:inherit; font-size:12px; }
+  #status { font-size:12px; color:var(--muted); margin-top:14px; white-space:pre-wrap; }
+  #status.err { color:#c0392b; }
+  @media (max-width: 700px) {
+    #app { flex-direction:column; }
+    #panel { width:100%; max-height:45%; border-right:none; border-bottom:1px solid var(--line); }
+  }
+</style>
+<script type="importmap">
+{ "imports": {
+    "three": "../vendor/three/build/three.module.js",
+    "three/addons/": "../vendor/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="app">
+  <div id="panel">
+    <h1>DINUMED</h1>
+    <div class="sub">Offline avatar demo · three.js r<span id="rev"></span></div>
+    <h2>Character</h2>
+    <div class="seg" id="gender">
+      <button data-g="male" class="on">Male</button>
+      <button data-g="female">Female</button>
+    </div>
+    <h2>Clothing &amp; accessories</h2>
+    <div id="items"></div>
+    <div class="row" style="margin-top:6px">
+      <button id="all">Full outfit</button><button id="none">Base body</button>
+    </div>
+    <h2>Animation</h2>
+    <div class="row">
+      <button id="play">Pause idle</button><button id="bind">A-pose (bind)</button>
+    </div>
+    <h2>View</h2>
+    <div class="row">
+      <button data-cam="front">Front</button><button data-cam="side">Side</button>
+      <button data-cam="back">Back</button><button data-cam="face">Face</button>
+    </div>
+    <div id="status">Loading…</div>
+  </div>
+  <div id="view"></div>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

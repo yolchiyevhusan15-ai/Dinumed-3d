@@ -1,0 +1,6251 @@
+{
+  "date": "2026-11-25T16:41:30.954Z",
+  "three": "187",
+  "passed": true,
+  "seconds": 60.896,
+  "checks": [
+    {
+      "name": "three.js revision is 187 (vendored 0.187.0)",
+      "pass": true,
+      "detail": "187"
+    },
+    {
+      "name": "idle.glb has one clip \"Idle\"",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male: character loads with SkinnedMeshes Body/Eyes/Hair/Underwear",
+      "pass": true,
+      "detail": "Body,Eyes,Hair,Underwear"
+    },
+    {
+      "name": "male: skeleton has 55 bones in canonical order",
+      "pass": true,
+      "detail": 55
+    },
+    {
+      "name": "male: file size < 3 MB",
+      "pass": true,
+      "detail": "1.90 MB"
+    },
+    {
+      "name": "male: embedded Idle animation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male: every Idle track targets an existing bone",
+      "pass": true,
+      "detail": "16 tracks"
+    },
+    {
+      "name": "male: bind pose has identity bone rotations (A-pose rest)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/character: skin weights normalised, joint indices valid, no NaN (32397 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "male/scrubs_top: loads, 1 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/scrubs_top: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/scrubs_top: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/scrubs_top: skin weights normalised, joint indices valid, no NaN (7345 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "male/medical_trousers: loads, 1 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/medical_trousers: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/medical_trousers: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/medical_trousers: skin weights normalised, joint indices valid, no NaN (7184 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "male/white_coat: loads, 2 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/white_coat: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/white_coat: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/white_coat: skin weights normalised, joint indices valid, no NaN (12700 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "male/medical_shoes: loads, 1 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/medical_shoes: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/medical_shoes: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/medical_shoes: skin weights normalised, joint indices valid, no NaN (6138 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "male/medical_cap: loads, 1 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/medical_cap: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/medical_cap: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/medical_cap: skin weights normalised, joint indices valid, no NaN (3689 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "male/stethoscope_over_coat: loads, 3 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/stethoscope_over_coat: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/stethoscope_over_coat: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/stethoscope_over_coat: skin weights normalised, joint indices valid, no NaN (3093 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "male/stethoscope_over_scrubs: loads, 3 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/stethoscope_over_scrubs: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/stethoscope_over_scrubs: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/stethoscope_over_scrubs: skin weights normalised, joint indices valid, no NaN (2964 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "male/glasses: loads, 3 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/glasses: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/glasses: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/glasses: skin weights normalised, joint indices valid, no NaN (2340 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "male/id_card_over_coat: loads, 2 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/id_card_over_coat: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/id_card_over_coat: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/id_card_over_coat: skin weights normalised, joint indices valid, no NaN (422 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "male/id_card_over_scrubs: loads, 2 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/id_card_over_scrubs: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/id_card_over_scrubs: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/id_card_over_scrubs: skin weights normalised, joint indices valid, no NaN (422 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "male/watch: loads, 3 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/watch: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/watch: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "male/watch: skin weights normalised, joint indices valid, no NaN (435 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "female: character loads with SkinnedMeshes Body/Eyes/Hair/Underwear",
+      "pass": true,
+      "detail": "Body,Eyes,Hair,Underwear"
+    },
+    {
+      "name": "female: skeleton has 55 bones in canonical order",
+      "pass": true,
+      "detail": 55
+    },
+    {
+      "name": "female: file size < 3 MB",
+      "pass": true,
+      "detail": "2.04 MB"
+    },
+    {
+      "name": "female: embedded Idle animation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female: every Idle track targets an existing bone",
+      "pass": true,
+      "detail": "16 tracks"
+    },
+    {
+      "name": "female: bind pose has identity bone rotations (A-pose rest)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/character: skin weights normalised, joint indices valid, no NaN (35166 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "female/scrubs_top: loads, 1 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/scrubs_top: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/scrubs_top: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/scrubs_top: skin weights normalised, joint indices valid, no NaN (7345 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "female/medical_trousers: loads, 1 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/medical_trousers: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/medical_trousers: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/medical_trousers: skin weights normalised, joint indices valid, no NaN (7203 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "female/white_coat: loads, 2 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/white_coat: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/white_coat: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/white_coat: skin weights normalised, joint indices valid, no NaN (12680 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "female/medical_shoes: loads, 1 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/medical_shoes: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/medical_shoes: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/medical_shoes: skin weights normalised, joint indices valid, no NaN (6116 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "female/medical_cap: loads, 1 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/medical_cap: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/medical_cap: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/medical_cap: skin weights normalised, joint indices valid, no NaN (3726 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "female/stethoscope_over_coat: loads, 3 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/stethoscope_over_coat: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/stethoscope_over_coat: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/stethoscope_over_coat: skin weights normalised, joint indices valid, no NaN (2974 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "female/stethoscope_over_scrubs: loads, 3 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/stethoscope_over_scrubs: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/stethoscope_over_scrubs: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/stethoscope_over_scrubs: skin weights normalised, joint indices valid, no NaN (2914 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "female/glasses: loads, 3 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/glasses: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/glasses: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/glasses: skin weights normalised, joint indices valid, no NaN (2338 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "female/id_card_over_coat: loads, 2 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/id_card_over_coat: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/id_card_over_coat: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/id_card_over_coat: skin weights normalised, joint indices valid, no NaN (422 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "female/id_card_over_scrubs: loads, 2 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/id_card_over_scrubs: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/id_card_over_scrubs: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/id_card_over_scrubs: skin weights normalised, joint indices valid, no NaN (422 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "female/watch: loads, 3 skinned mesh(es)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/watch: identical bone names/order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/watch: bind matrices equal character's (max diff 0.0e+0)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "female/watch: skin weights normalised, joint indices valid, no NaN (435 verts)",
+      "pass": true,
+      "detail": "bad=0 idx=0 nan=0"
+    },
+    {
+      "name": "bind pose: no vertex penetrates more than 1 mm in any tested pair",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "idle animation: no vertex penetrates more than 1 mm in any tested pair/frame",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "accessories are in contact with their support (<= 2.5 mm)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no network request left the machine (offline)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no page / console errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "demo renders male with full outfit (non-blank canvas)",
+      "pass": true,
+      "detail": "male · 9 item(s) · 3784 ms"
+    },
+    {
+      "name": "demo renders female with full outfit (non-blank canvas)",
+      "pass": true,
+      "detail": "female · 9 item(s) · 4140 ms"
+    }
+  ],
+  "clipping": [
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3304,
+      "minDistance": 0.0025757501753827907,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5241,
+      "minDistance": 0.0010321842820451923,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5223,
+      "minDistance": 0.010924441416077938,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1291,
+      "minDistance": 0.01854399557089665,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7184,
+      "minDistance": 0.005540227723925983,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2229,
+      "minDistance": 0.0026948471638367257,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4253,
+      "minDistance": 0.009971944995329133,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1874,
+      "minDistance": 0.01534159429626146,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5145,
+      "minDistance": 0.002374557966466717,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 354,
+      "minDistance": 0.002171889759243517,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.0031201227657131807,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.002032490109884224,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2119,
+      "minDistance": 8.928649941667211e-7,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1058,
+      "minDistance": 0.0030477812640952165,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 248,
+      "minDistance": 0.014321671296474757,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.0004494004194871603,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 13,
+      "minDistance": 0.01647232093370379,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3093,
+      "minDistance": 0.00016360222605541473,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.000048140662567586445,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 215,
+      "minDistance": 0.00007878849532610464,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2964,
+      "minDistance": 0.0003205327304163237,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1520,
+      "minDistance": 0.012197965424852497,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.0003837665578320822,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 206,
+      "minDistance": 0.00006074646589756536,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3304,
+      "minDistance": 0.0025725159508887883,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5241,
+      "minDistance": 0.0010502197266740738,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5223,
+      "minDistance": 0.007880433778800253,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1290,
+      "minDistance": 0.01854773716846969,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7184,
+      "minDistance": 0.0055313839256226965,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2229,
+      "minDistance": 0.0026867378469715734,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 11,
+      "minDistance": 0.018366779252929906,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4304,
+      "minDistance": 0.007033213273356296,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1874,
+      "minDistance": 0.015337808112811168,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5145,
+      "minDistance": 0.0023745450593560674,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 354,
+      "minDistance": 0.002171888445382025,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.0031242053999187887,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.002032491985036455,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2120,
+      "minDistance": 7.604172894921349e-7,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1058,
+      "minDistance": 0.003047772742756834,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 248,
+      "minDistance": 0.014321586290139377,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.0004493969262133549,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 13,
+      "minDistance": 0.01647225787115096,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3093,
+      "minDistance": 0.000030138448054009454,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.00004813815401212811,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 215,
+      "minDistance": 0.00007878876437804903,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2964,
+      "minDistance": 0.000310664058388383,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1523,
+      "minDistance": 0.011972346474543873,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.0003837638954287339,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=0.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 206,
+      "minDistance": 0.000060741978469340375,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3304,
+      "minDistance": 0.0025947714459566627,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5241,
+      "minDistance": 0.0010596215835454493,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5225,
+      "minDistance": 0.006855608279397145,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1293,
+      "minDistance": 0.018574848631775737,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7184,
+      "minDistance": 0.005481206561624441,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2230,
+      "minDistance": 0.002654278015439938,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 27,
+      "minDistance": 0.016460444773222064,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4309,
+      "minDistance": 0.004687605141791218,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1876,
+      "minDistance": 0.015336703536242521,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5145,
+      "minDistance": 0.002374545322442347,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 354,
+      "minDistance": 0.002171888549885908,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.0031337254301445133,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.002032501721619197,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2120,
+      "minDistance": 0.000010569462448487398,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1058,
+      "minDistance": 0.003047763307424632,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 248,
+      "minDistance": 0.01432165671925559,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.00044941208385016905,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 13,
+      "minDistance": 0.01647236979959314,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3093,
+      "minDistance": 0.000016195565144074035,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.000045168642787444384,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 211,
+      "minDistance": 0.0001692702411104188,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2964,
+      "minDistance": 0.00029063167500423585,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1520,
+      "minDistance": 0.011975158609175368,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.000266996434823896,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=1.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 203,
+      "minDistance": 0.000080734850547819,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3304,
+      "minDistance": 0.002605936152260217,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5241,
+      "minDistance": 0.0010282613634071598,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5223,
+      "minDistance": 0.007874066407543444,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1295,
+      "minDistance": 0.018549731257262926,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7184,
+      "minDistance": 0.005464063249447385,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2230,
+      "minDistance": 0.0026800582527876406,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 15,
+      "minDistance": 0.016955222417602098,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4309,
+      "minDistance": 0.0053660611615863555,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1876,
+      "minDistance": 0.015338442283399712,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5145,
+      "minDistance": 0.0023745454654100044,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 354,
+      "minDistance": 0.0021718882433168813,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.003112572259862936,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.002032488353456224,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2120,
+      "minDistance": 0.0000028020638453252787,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1058,
+      "minDistance": 0.003047792955612387,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 248,
+      "minDistance": 0.014321729233494894,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.0004494015313526136,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 13,
+      "minDistance": 0.016472310040239937,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3093,
+      "minDistance": 0.000051043218864522045,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.000020220737552447145,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 215,
+      "minDistance": 0.000040028932559177595,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2964,
+      "minDistance": 0.0003142449217207012,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1523,
+      "minDistance": 0.011978449337253425,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.0004426312964678584,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=2.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 206,
+      "minDistance": 0.00006712952024049599,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3304,
+      "minDistance": 0.002599572544204704,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5241,
+      "minDistance": 0.0010005116716245716,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5223,
+      "minDistance": 0.008685405162580867,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1293,
+      "minDistance": 0.018519141891777828,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7184,
+      "minDistance": 0.005512214713170387,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2230,
+      "minDistance": 0.0026871649010719355,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 6,
+      "minDistance": 0.01856921816977863,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4302,
+      "minDistance": 0.007199520146777591,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1875,
+      "minDistance": 0.015342008722197754,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5145,
+      "minDistance": 0.002374546109214039,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 354,
+      "minDistance": 0.0021718886256322464,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.003107407643076088,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.0020324739057668104,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2118,
+      "minDistance": 0.000018540407521091778,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1058,
+      "minDistance": 0.0030477729387948446,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 248,
+      "minDistance": 0.014321647519621472,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.00044940726713357923,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 13,
+      "minDistance": 0.016472293433765234,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3093,
+      "minDistance": 0.00004426317064858991,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.00009944466705570224,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 221,
+      "minDistance": 0.0001464614299890913,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2964,
+      "minDistance": 0.00034149283335561676,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1525,
+      "minDistance": 0.011996095849335359,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.00027355239400327243,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=3.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 210,
+      "minDistance": 0.00005592097646239213,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3304,
+      "minDistance": 0.0025788042220658896,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5241,
+      "minDistance": 0.0010335378735606008,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5223,
+      "minDistance": 0.008634766154615815,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1290,
+      "minDistance": 0.018540122737098055,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7184,
+      "minDistance": 0.005545841520080044,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2229,
+      "minDistance": 0.0027019083403012536,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4,
+      "minDistance": 0.01902332341601924,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4301,
+      "minDistance": 0.007155730760217504,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1874,
+      "minDistance": 0.015345454247077284,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5145,
+      "minDistance": 0.002374545915212285,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 354,
+      "minDistance": 0.0021718903267513305,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.0031324768630954904,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.002032492949561464,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2118,
+      "minDistance": 0.00001092177028664927,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1058,
+      "minDistance": 0.003047770629709433,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 248,
+      "minDistance": 0.014321586337065373,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.0004494129069947836,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 13,
+      "minDistance": 0.016472230608269148,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3093,
+      "minDistance": 0.000010526938078155996,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.0000481371681732328,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 215,
+      "minDistance": 0.00007878200843562147,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2964,
+      "minDistance": 0.0003307364823405742,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1522,
+      "minDistance": 0.012036048571823641,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.0003837693489707433,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 206,
+      "minDistance": 0.00006074267666742272,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3304,
+      "minDistance": 0.0025556869493664714,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5241,
+      "minDistance": 0.0010447816922025208,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5224,
+      "minDistance": 0.00834420075468759,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1293,
+      "minDistance": 0.018561138711123186,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7184,
+      "minDistance": 0.005524516244781614,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2229,
+      "minDistance": 0.0026811720152677652,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3,
+      "minDistance": 0.019426241124770063,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4305,
+      "minDistance": 0.007302574789547595,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1873,
+      "minDistance": 0.01534667939588023,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5145,
+      "minDistance": 0.0023745459845612195,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 354,
+      "minDistance": 0.0021718904297782504,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.0031411769643053195,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.002032513604776346,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2119,
+      "minDistance": 0.000005459690567800223,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1058,
+      "minDistance": 0.0030477981295083598,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 248,
+      "minDistance": 0.014321689579592926,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.00044939938520700774,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 13,
+      "minDistance": 0.016472346904445677,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3093,
+      "minDistance": 0.00004780417819426264,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.00003206899238926595,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 210,
+      "minDistance": 0.000015269826717215606,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2964,
+      "minDistance": 0.00031352189023148595,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1519,
+      "minDistance": 0.012056087633787753,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.00018866123079008834,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=5.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 201,
+      "minDistance": 0.00006583700713748143,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3304,
+      "minDistance": 0.002544372534650106,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5241,
+      "minDistance": 0.0010216250970434433,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5223,
+      "minDistance": 0.008635435375689025,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1293,
+      "minDistance": 0.018537733145166633,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7184,
+      "minDistance": 0.0055470016030820714,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2229,
+      "minDistance": 0.002701047216597077,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4301,
+      "minDistance": 0.009010079614857095,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1872,
+      "minDistance": 0.015344897598280352,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5145,
+      "minDistance": 0.002374557966466716,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 354,
+      "minDistance": 0.0021718885608000517,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.003114834256929408,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.0020324665758335737,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2119,
+      "minDistance": 0.000007515450749133318,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1058,
+      "minDistance": 0.0030477553822773067,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 248,
+      "minDistance": 0.014321669900449899,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.0004494078499347403,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 13,
+      "minDistance": 0.0164722888417914,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3093,
+      "minDistance": 0.000008823610654361814,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.00007194870897143029,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 215,
+      "minDistance": 0.00019953241761820126,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2964,
+      "minDistance": 0.0003267179604629731,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1522,
+      "minDistance": 0.012029678215221513,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.00032605446820623994,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=6.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 204,
+      "minDistance": 0.00005354562617397377,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3304,
+      "minDistance": 0.0025516014335912655,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5241,
+      "minDistance": 0.0010074607379531723,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5223,
+      "minDistance": 0.008687035657822,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1292,
+      "minDistance": 0.018516051637397727,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7184,
+      "minDistance": 0.005518114756069108,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2229,
+      "minDistance": 0.0026955847801157745,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4302,
+      "minDistance": 0.008964337134093473,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1873,
+      "minDistance": 0.015341144245894707,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5145,
+      "minDistance": 0.0023745452167726194,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 354,
+      "minDistance": 0.002171885836428472,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.003103194837750647,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3689,
+      "minDistance": 0.0020324990334827076,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2121,
+      "minDistance": 0.000014601462979263869,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1058,
+      "minDistance": 0.0030477711956516896,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 248,
+      "minDistance": 0.014321632117809891,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.00044939561087930325,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 13,
+      "minDistance": 0.01647239719407817,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3093,
+      "minDistance": 0.00004517607207171834,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.000014133228901232634,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 220,
+      "minDistance": 0.0002987940922236565,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2964,
+      "minDistance": 0.0003360546690460956,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1526,
+      "minDistance": 0.011987127626935089,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 422,
+      "minDistance": 0.0005084622410789529,
+      "worst": null
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=7.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 208,
+      "minDistance": 0.00005159961669909933,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 6042,
+      "minDistance": 0.002450675945490649,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3938,
+      "minDistance": 0.0010412796497799332,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4920,
+      "minDistance": 0.010837493326356308,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3527,
+      "minDistance": 0.008255136363212484,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7196,
+      "minDistance": 0.005350144748001999,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2365,
+      "minDistance": 0.0027112446117110826,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2250,
+      "minDistance": 0.017838026187538422,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5283,
+      "minDistance": 0.006875915440693156,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2163,
+      "minDistance": 0.014447147624014696,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5033,
+      "minDistance": 0.0023934708801479254,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 350,
+      "minDistance": 0.006108978309808201,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2953,
+      "minDistance": 0.00326329211645654,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3726,
+      "minDistance": 0.001984233331887731,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2213,
+      "minDistance": 0.000014895664015375076,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1121,
+      "minDistance": 0.0025998508766146068,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 264,
+      "minDistance": 0.013738585366896146,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.00046164697254188526,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 20,
+      "minDistance": 0.014572068631704172,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2974,
+      "minDistance": 0.0000502651067767073,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 402,
+      "minDistance": 0.0007700434652300461,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 228,
+      "minDistance": 0.000010295872382010498,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2914,
+      "minDistance": 0.000017768044365490133,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1367,
+      "minDistance": 0.01216623334186719,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 360,
+      "minDistance": 0.0010713584765873327,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 222,
+      "minDistance": 0.000004695088865493544,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 6042,
+      "minDistance": 0.002450676355330381,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3941,
+      "minDistance": 0.0010455832516580326,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4920,
+      "minDistance": 0.00936677340202377,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3583,
+      "minDistance": 0.006624086651790989,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7196,
+      "minDistance": 0.005354533756791377,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2365,
+      "minDistance": 0.0027097312637790446,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2263,
+      "minDistance": 0.016348983163847544,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5287,
+      "minDistance": 0.00427540661292374,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2163,
+      "minDistance": 0.014449664902798769,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5033,
+      "minDistance": 0.0023934715808303824,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 350,
+      "minDistance": 0.006108975729682546,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2954,
+      "minDistance": 0.0032571558572289257,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3726,
+      "minDistance": 0.001984279888099836,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2211,
+      "minDistance": 0.00003344583630207035,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1121,
+      "minDistance": 0.002599824148486899,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 264,
+      "minDistance": 0.013738544451467792,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.0004616466238408808,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 20,
+      "minDistance": 0.014571938827973375,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2974,
+      "minDistance": 0.000047595995486504665,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 402,
+      "minDistance": 0.000770051846012119,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 228,
+      "minDistance": 0.000010298196199004257,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2914,
+      "minDistance": 0.00001726803097453034,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1360,
+      "minDistance": 0.012022145123039021,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 362,
+      "minDistance": 0.0010713499882864816,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=0.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 222,
+      "minDistance": 0.000004692445598253606,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 6042,
+      "minDistance": 0.002443026923021891,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3942,
+      "minDistance": 0.0010609695753557487,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4916,
+      "minDistance": 0.008626335398563287,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3591,
+      "minDistance": 0.006324186113695201,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7196,
+      "minDistance": 0.00537916451887268,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2366,
+      "minDistance": 0.002692022529064604,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2287,
+      "minDistance": 0.013773810632244428,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5285,
+      "minDistance": 0.0016098019549590382,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2162,
+      "minDistance": 0.01447680063050194,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5033,
+      "minDistance": 0.002393469657142004,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 350,
+      "minDistance": 0.006108981534775114,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2954,
+      "minDistance": 0.0032681918863246445,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3726,
+      "minDistance": 0.0019842103951717093,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2211,
+      "minDistance": 0.000010332612342275698,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1121,
+      "minDistance": 0.0025998387901512623,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 264,
+      "minDistance": 0.01373856653991405,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.0004616443566115513,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 20,
+      "minDistance": 0.014572017220872605,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2974,
+      "minDistance": 0.00003438770422842578,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 402,
+      "minDistance": 0.0008227222782300216,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 228,
+      "minDistance": 0.000006990185669141104,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2914,
+      "minDistance": 0.000003934082014776581,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1361,
+      "minDistance": 0.012057383924697709,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 358,
+      "minDistance": 0.0010945561005446874,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=1.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 222,
+      "minDistance": 0.00003020272222971302,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 6042,
+      "minDistance": 0.002448952998260887,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3939,
+      "minDistance": 0.0010286293677194763,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4924,
+      "minDistance": 0.009379981950352475,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3589,
+      "minDistance": 0.006642222952046293,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7196,
+      "minDistance": 0.005386972872087693,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2366,
+      "minDistance": 0.002705379820555072,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2269,
+      "minDistance": 0.014436803399606303,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5287,
+      "minDistance": 0.0023391137090369688,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2163,
+      "minDistance": 0.014487809762454219,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5033,
+      "minDistance": 0.002393470847701753,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 350,
+      "minDistance": 0.006108977813646121,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2953,
+      "minDistance": 0.0032531898217840454,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3726,
+      "minDistance": 0.0019842405730663517,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2213,
+      "minDistance": 0.000009011962099804409,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1121,
+      "minDistance": 0.002599826295174449,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 264,
+      "minDistance": 0.013738640094686519,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.0004616474271291133,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 20,
+      "minDistance": 0.014572017801599994,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2974,
+      "minDistance": 0.00004941260515592423,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 402,
+      "minDistance": 0.0007577106957752195,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 228,
+      "minDistance": 0.0000022810057584114155,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2914,
+      "minDistance": 0.000001862574809239112,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1359,
+      "minDistance": 0.01202353200092685,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 362,
+      "minDistance": 0.0010629024812642703,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=2.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 222,
+      "minDistance": 0.0000035185015125344632,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 6042,
+      "minDistance": 0.0024471583781530506,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3933,
+      "minDistance": 0.0010094843981556614,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4926,
+      "minDistance": 0.009866965681894213,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3571,
+      "minDistance": 0.007087271412107978,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7196,
+      "minDistance": 0.005373503112797862,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2366,
+      "minDistance": 0.0027310015516671116,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2261,
+      "minDistance": 0.016241100609547893,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5287,
+      "minDistance": 0.004223895772477605,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2163,
+      "minDistance": 0.014475135317731822,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5033,
+      "minDistance": 0.002393469851527712,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 350,
+      "minDistance": 0.006108976028002559,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2950,
+      "minDistance": 0.003255709354699976,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3726,
+      "minDistance": 0.001984205785367574,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2213,
+      "minDistance": 0.000001207934645831101,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1121,
+      "minDistance": 0.0025998330668560088,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 264,
+      "minDistance": 0.013738591641568664,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.00046164875548716805,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 20,
+      "minDistance": 0.014571936186157711,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2974,
+      "minDistance": 0.0000169157293092479,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 402,
+      "minDistance": 0.0007023930941623225,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 228,
+      "minDistance": 0.000008175168402505323,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2914,
+      "minDistance": 0.000014030205466546547,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1360,
+      "minDistance": 0.012001008284570886,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 362,
+      "minDistance": 0.0010376769187923267,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=3.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 222,
+      "minDistance": 0.000007703083576306207,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 6042,
+      "minDistance": 0.002450681717762786,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3938,
+      "minDistance": 0.001055492188771378,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4920,
+      "minDistance": 0.00985292666503568,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3573,
+      "minDistance": 0.007096758509222548,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7196,
+      "minDistance": 0.005345333593791244,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2365,
+      "minDistance": 0.0027064378373793745,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2260,
+      "minDistance": 0.016500651458025376,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5286,
+      "minDistance": 0.004482775176564052,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2163,
+      "minDistance": 0.014444480596204075,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5033,
+      "minDistance": 0.0023934710902260635,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 350,
+      "minDistance": 0.006108975597585589,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2953,
+      "minDistance": 0.003283530517690856,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3726,
+      "minDistance": 0.0019842794266017,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2213,
+      "minDistance": 0.0000036783402706053064,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1121,
+      "minDistance": 0.0025998220649529843,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 264,
+      "minDistance": 0.013738544810896126,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.0004616462671628129,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 20,
+      "minDistance": 0.014571915069550589,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2974,
+      "minDistance": 0.000045232079255964276,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 402,
+      "minDistance": 0.0007700460078966685,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 228,
+      "minDistance": 0.000010297591277943707,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2914,
+      "minDistance": 0.000006074389307516612,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1359,
+      "minDistance": 0.012070921865754689,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 362,
+      "minDistance": 0.001071355787961216,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 222,
+      "minDistance": 0.000004699366953769815,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 6042,
+      "minDistance": 0.0024543589437180454,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3939,
+      "minDistance": 0.0010756733514903356,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4918,
+      "minDistance": 0.009691595446306185,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3574,
+      "minDistance": 0.00696400879191482,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7196,
+      "minDistance": 0.005318744943503038,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2363,
+      "minDistance": 0.0026844277635228162,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2261,
+      "minDistance": 0.016669607728798788,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5285,
+      "minDistance": 0.004786991814454954,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2166,
+      "minDistance": 0.014415091799121753,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5033,
+      "minDistance": 0.0023934703079534748,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 350,
+      "minDistance": 0.006108978621507657,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2954,
+      "minDistance": 0.003289941365689629,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3726,
+      "minDistance": 0.0019842653624356998,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2212,
+      "minDistance": 3.5416788423395765e-7,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1121,
+      "minDistance": 0.0025998522613045597,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 264,
+      "minDistance": 0.013738551775230258,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.0004616514764308126,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 20,
+      "minDistance": 0.014571980139992712,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2974,
+      "minDistance": 0.00002938612277698039,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 402,
+      "minDistance": 0.0008407083622296974,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 228,
+      "minDistance": 7.464353371707025e-7,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2914,
+      "minDistance": 0.000006943830242514669,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1360,
+      "minDistance": 0.012124204618935869,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 359,
+      "minDistance": 0.001107072705844109,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=5.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 222,
+      "minDistance": 0.000042555112760151776,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 6042,
+      "minDistance": 0.00245249427454894,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3935,
+      "minDistance": 0.0010293124169799097,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4920,
+      "minDistance": 0.00983925088257932,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3568,
+      "minDistance": 0.0070774380371432235,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7196,
+      "minDistance": 0.005310774104082797,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2364,
+      "minDistance": 0.0027105094361721234,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2257,
+      "minDistance": 0.017838073400847098,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5286,
+      "minDistance": 0.006519280118796024,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2164,
+      "minDistance": 0.014405815996240077,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5033,
+      "minDistance": 0.002393470999640131,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 350,
+      "minDistance": 0.006108978106258484,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2952,
+      "minDistance": 0.003261208277205927,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3726,
+      "minDistance": 0.001984200480187647,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2213,
+      "minDistance": 0.0000028463857624716074,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1121,
+      "minDistance": 0.0025998485042910153,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 264,
+      "minDistance": 0.013738624897149982,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.0004616453749622761,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 20,
+      "minDistance": 0.01457198335927153,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2974,
+      "minDistance": 0.000050865552653549214,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 402,
+      "minDistance": 0.0007824813417090989,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 228,
+      "minDistance": 0.000012529157007767825,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2914,
+      "minDistance": 0.00001490286578939658,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1361,
+      "minDistance": 0.012069138424453455,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 362,
+      "minDistance": 0.00107988440482093,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=6.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 222,
+      "minDistance": 0.000013030584507426525,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "Underwear",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 6042,
+      "minDistance": 0.002449841563463269,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "Hair",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3936,
+      "minDistance": 0.0010135565334416265,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "scrubs_top",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 4924,
+      "minDistance": 0.009848535939570822,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "scrubs_top",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3565,
+      "minDistance": 0.007060560781399753,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "medical_trousers",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 7196,
+      "minDistance": 0.005326006916360975,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "medical_trousers",
+      "inner": "Underwear",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2363,
+      "minDistance": 0.0027219158617785193,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "white_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2254,
+      "minDistance": 0.017838068205881186,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "white_coat",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5288,
+      "minDistance": 0.006885436008538091,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "white_coat",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "scrubs_top",
+      "inner": "medical_trousers",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2164,
+      "minDistance": 0.014420922585187209,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "medical_shoes",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 5033,
+      "minDistance": 0.002393470307953473,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "medical_trousers",
+      "inner": "medical_shoes",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 350,
+      "minDistance": 0.006108978911088069,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "medical_cap",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2952,
+      "minDistance": 0.003239804101440961,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "medical_cap",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 3726,
+      "minDistance": 0.001984263163932594,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "glasses",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2215,
+      "minDistance": 0.000023175346612176024,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "glasses",
+      "inner": "Hair",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1121,
+      "minDistance": 0.0025998508469262925,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "glasses",
+      "inner": "medical_cap",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 264,
+      "minDistance": 0.013738626086985044,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "watch",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 435,
+      "minDistance": 0.00046164791497260705,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "white_coat",
+      "inner": "watch",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 20,
+      "minDistance": 0.014572002585539888,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2974,
+      "minDistance": 0.000010773247175732871,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 0,
+      "minDistance": null,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "id_card_over_coat",
+      "inner": "white_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 402,
+      "minDistance": 0.0007194787690986399,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "stethoscope_over_coat",
+      "inner": "id_card_over_coat",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 228,
+      "minDistance": 0.000002442816891613705,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 2914,
+      "minDistance": 0.000013214838715545097,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "Body",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 1360,
+      "minDistance": 0.01199879088814267,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "id_card_over_scrubs",
+      "inner": "scrubs_top",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 362,
+      "minDistance": 0.0010491917677052074,
+      "worst": null
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=7.0s",
+      "outer": "stethoscope_over_scrubs",
+      "inner": "id_card_over_scrubs",
+      "count": 0,
+      "maxDepth": 0,
+      "tested": 222,
+      "minDistance": 0.000018530049721898708,
+      "worst": null
+    }
+  ],
+  "contact": [
+    {
+      "gender": "male",
+      "pose": "bind",
+      "accessory": "glasses",
+      "supports": [
+        "Body"
+      ],
+      "minDistance": 8.928649941667211e-7,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "accessory": "watch",
+      "supports": [
+        "Body"
+      ],
+      "minDistance": 0.0004494004194871603,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "accessory": "medical_cap",
+      "supports": [
+        "Body",
+        "Hair"
+      ],
+      "minDistance": 0.002032490109884224,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "accessory": "medical_shoes",
+      "supports": [
+        "Body"
+      ],
+      "minDistance": 0.002374557966466717,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "accessory": "stethoscope_over_coat",
+      "supports": [
+        "white_coat",
+        "Body",
+        "scrubs_top"
+      ],
+      "minDistance": 0.00016360222605541473,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "accessory": "id_card_over_coat",
+      "supports": [
+        "white_coat"
+      ],
+      "minDistance": 0.000048140662567586445,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "accessory": "stethoscope_over_scrubs",
+      "supports": [
+        "scrubs_top",
+        "Body"
+      ],
+      "minDistance": 0.0003205327304163237,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "bind",
+      "accessory": "id_card_over_scrubs",
+      "supports": [
+        "scrubs_top"
+      ],
+      "minDistance": 0.0003837665578320822,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "accessory": "glasses",
+      "supports": [
+        "Body"
+      ],
+      "minDistance": 0.00001092177028664927,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "accessory": "watch",
+      "supports": [
+        "Body"
+      ],
+      "minDistance": 0.0004494129069947836,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "accessory": "medical_cap",
+      "supports": [
+        "Body",
+        "Hair"
+      ],
+      "minDistance": 0.002032492949561464,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "accessory": "medical_shoes",
+      "supports": [
+        "Body"
+      ],
+      "minDistance": 0.002374545915212285,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "accessory": "stethoscope_over_coat",
+      "supports": [
+        "white_coat",
+        "Body",
+        "scrubs_top"
+      ],
+      "minDistance": 0.000010526938078155996,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "accessory": "id_card_over_coat",
+      "supports": [
+        "white_coat"
+      ],
+      "minDistance": 0.0000481371681732328,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "accessory": "stethoscope_over_scrubs",
+      "supports": [
+        "scrubs_top",
+        "Body"
+      ],
+      "minDistance": 0.0003307364823405742,
+      "pass": true
+    },
+    {
+      "gender": "male",
+      "pose": "idle t=4.0s",
+      "accessory": "id_card_over_scrubs",
+      "supports": [
+        "scrubs_top"
+      ],
+      "minDistance": 0.0003837693489707433,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "accessory": "glasses",
+      "supports": [
+        "Body"
+      ],
+      "minDistance": 0.000014895664015375076,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "accessory": "watch",
+      "supports": [
+        "Body"
+      ],
+      "minDistance": 0.00046164697254188526,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "accessory": "medical_cap",
+      "supports": [
+        "Body",
+        "Hair"
+      ],
+      "minDistance": 0.001984233331887731,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "accessory": "medical_shoes",
+      "supports": [
+        "Body"
+      ],
+      "minDistance": 0.0023934708801479254,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "accessory": "stethoscope_over_coat",
+      "supports": [
+        "white_coat",
+        "Body",
+        "scrubs_top"
+      ],
+      "minDistance": 0.0000502651067767073,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "accessory": "id_card_over_coat",
+      "supports": [
+        "white_coat"
+      ],
+      "minDistance": 0.0007700434652300461,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "accessory": "stethoscope_over_scrubs",
+      "supports": [
+        "scrubs_top",
+        "Body"
+      ],
+      "minDistance": 0.000017768044365490133,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "bind",
+      "accessory": "id_card_over_scrubs",
+      "supports": [
+        "scrubs_top"
+      ],
+      "minDistance": 0.0010713584765873327,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "accessory": "glasses",
+      "supports": [
+        "Body"
+      ],
+      "minDistance": 0.0000036783402706053064,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "accessory": "watch",
+      "supports": [
+        "Body"
+      ],
+      "minDistance": 0.0004616462671628129,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "accessory": "medical_cap",
+      "supports": [
+        "Body",
+        "Hair"
+      ],
+      "minDistance": 0.0019842794266017,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "accessory": "medical_shoes",
+      "supports": [
+        "Body"
+      ],
+      "minDistance": 0.0023934710902260635,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "accessory": "stethoscope_over_coat",
+      "supports": [
+        "white_coat",
+        "Body",
+        "scrubs_top"
+      ],
+      "minDistance": 0.000045232079255964276,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "accessory": "id_card_over_coat",
+      "supports": [
+        "white_coat"
+      ],
+      "minDistance": 0.0007700460078966685,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "accessory": "stethoscope_over_scrubs",
+      "supports": [
+        "scrubs_top",
+        "Body"
+      ],
+      "minDistance": 0.000006074389307516612,
+      "pass": true
+    },
+    {
+      "gender": "female",
+      "pose": "idle t=4.0s",
+      "accessory": "id_card_over_scrubs",
+      "supports": [
+        "scrubs_top"
+      ],
+      "minDistance": 0.001071355787961216,
+      "pass": true
+    }
+  ],
+  "external": [],
+  "errors": []
+}

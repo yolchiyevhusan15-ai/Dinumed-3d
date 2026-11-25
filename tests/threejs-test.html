@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DINUMED three.js asset tests</title>
+<script type="importmap">
+{ "imports": {
+    "three": "../vendor/three/build/three.module.js",
+    "three/addons/": "../vendor/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<pre id="out">Running checks… (open the browser console for progress)</pre>
+<script type="module">
+import './checks.js';
+const r = await window.__results;
+document.getElementById('out').textContent = r.error ? r.error :
+  (r.passed ? 'ALL CHECKS PASSED\n\n' : 'SOME CHECKS FAILED\n\n') +
+  r.checks.map((c) => (c.pass ? 'PASS ' : 'FAIL ') + c.name + (c.detail ? '  [' + c.detail + ']' : '')).join('\n');
+</script>
+</body>
+</html>
