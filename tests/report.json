@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-25T18:22:01.209Z",
+  "date": "2026-11-25T18:30:47.866Z",
   "three": "187",
   "passed": true,
-  "seconds": 123.293,
+  "seconds": 121.365,
   "checks": [
     {
       "name": "three.js revision is 187 (vendored 0.187.0)",
@@ -712,7 +712,7 @@
     {
       "name": "garderob renders male avatar (non-blank canvas, 8 items worn)",
       "pass": true,
-      "detail": "contrast 969"
+      "detail": "contrast 968"
     },
     {
       "name": "garderob male: buying an item deducts DC and wears it",
@@ -727,7 +727,7 @@
     {
       "name": "garderob renders female avatar (non-blank canvas, 8 items worn)",
       "pass": true,
-      "detail": "contrast 968"
+      "detail": "contrast 971"
     },
     {
       "name": "garderob female: buying an item deducts DC and wears it",
