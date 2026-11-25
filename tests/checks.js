@@ -89,6 +89,7 @@ class TriGrid {
     const z0 = Math.floor((p[2] - r) / c), z1 = Math.floor((p[2] + r) / c);
     let best = Infinity, bestSigned = null;
     const seen = new Set();
+    const cands = [];       // [d2, face-normal side] of every triangle tested
     for (let x = x0; x <= x1; x++) for (let y = y0; y <= y1; y++) for (let z = z0; z <= z1; z++) {
       const list = this.map.get(x + ',' + y + ',' + z);
       if (!list) continue;
@@ -97,6 +98,13 @@ class TriGrid {
         seen.add(t);
         const ia = F[t * 3], ib = F[t * 3 + 1], ic = F[t * 3 + 2];
         const res = closestOnTri(p, P, ia, ib, ic);
+        {
+          // side of the triangle's own plane (used to resolve convex edges, see below)
+          const ux = P[ib * 3] - P[ia * 3], uy = P[ib * 3 + 1] - P[ia * 3 + 1], uz = P[ib * 3 + 2] - P[ia * 3 + 2];
+          const vx = P[ic * 3] - P[ia * 3], vy = P[ic * 3 + 1] - P[ia * 3 + 1], vz = P[ic * 3 + 2] - P[ia * 3 + 2];
+          const fx = uy * vz - uz * vy, fy = uz * vx - ux * vz, fz = ux * vy - uy * vx;
+          cands.push([res.d2, (p[0] - res.q[0]) * fx + (p[1] - res.q[1]) * fy + (p[2] - res.q[2]) * fz]);
+        }
         if (res.d2 < best) {
           best = res.d2;
           const f = res.feat, ids = [ia, ib, ic];
@@ -112,6 +120,12 @@ class TriGrid {
     }
     this.boundary = this.lastBoundary;
     if (best > r * r) return null;      // nothing within the search radius
+    // A point beside a convex edge/corner of a thin solid is outside even if the averaged
+    // vertex normal says otherwise: it is in front of at least one of the faces meeting there.
+    if (bestSigned < 0) {
+      const lim = best * 1.002 + 1e-12;
+      if (cands.some((c) => c[0] <= lim && c[1] > 0)) bestSigned = -bestSigned;
+    }
     return bestSigned;
   }
 }
@@ -179,8 +193,8 @@ async function run() {
     const bones = new Map();
     const parts = {};
     root.traverse((o) => { if (o.isBone) bones.set(o.name, o); if (o.isSkinnedMesh) parts[o.name] = o; });
-    ok(`${g}: character loads with SkinnedMeshes Body/Eyes/Hair/Underwear`,
-      ['Body', 'Eyes', 'Hair', 'Underwear'].every((k) => parts[k]), Object.keys(parts).join(','));
+    ok(`${g}: character loads with SkinnedMeshes Body/Eyes/Hair/Mouth/Teeth/Underwear`,
+      ['Body', 'Eyes', 'Hair', 'Mouth', 'Teeth', 'Underwear'].every((k) => parts[k]), Object.keys(parts).join(','));
     const charSk = parts.Body.skeleton;
     ok(`${g}: skeleton has ${names.length} bones in canonical order`,
       charSk.bones.map((b) => b.name).join() === names.join(), charSk.bones.length);
@@ -232,11 +246,24 @@ async function run() {
       ['id_card_over_coat', 'white_coat'], ['stethoscope_over_coat', 'id_card_over_coat'],
       ['stethoscope_over_scrubs', 'scrubs_top'], ['stethoscope_over_scrubs', 'Body'],
       ['id_card_over_scrubs', 'scrubs_top'], ['stethoscope_over_scrubs', 'id_card_over_scrubs'],
+      ['Mouth', 'Body'], ['Teeth', 'Body'],
+      ['sneakers', 'Body'], ['medical_trousers', 'sneakers'],
+      ['medical_mask', 'Body'], ['medical_mask', 'Mouth'], ['medical_mask', 'Teeth'],
+      ['glasses', 'medical_mask'], ['medical_mask', 'glasses'],
+      ['backpack_over_coat', 'white_coat'], ['backpack_over_coat', 'Body'],
+      ['backpack_over_scrubs', 'scrubs_top'], ['backpack_over_scrubs', 'Body'],
+      ['stethoscope_over_coat', 'backpack_over_coat'], ['backpack_over_coat', 'stethoscope_over_coat'],
+      ['stethoscope_over_scrubs', 'backpack_over_scrubs'], ['backpack_over_scrubs', 'stethoscope_over_scrubs'],
+      ['id_card_over_coat', 'backpack_over_coat'], ['backpack_over_coat', 'id_card_over_coat'],
+      ['id_card_over_scrubs', 'backpack_over_scrubs'], ['backpack_over_scrubs', 'id_card_over_scrubs'],
+      ['id_card_over_coat', 'stethoscope_over_coat'], ['id_card_over_scrubs', 'stethoscope_over_scrubs'],
     ];
     const contacts = [
       ['glasses', ['Body']], ['watch', ['Body']], ['medical_cap', ['Body', 'Hair']], ['medical_shoes', ['Body']],
       ['stethoscope_over_coat', ['white_coat', 'Body', 'scrubs_top']], ['id_card_over_coat', ['white_coat']],
       ['stethoscope_over_scrubs', ['scrubs_top', 'Body']], ['id_card_over_scrubs', ['scrubs_top']],
+      ['sneakers', ['Body']], ['medical_mask', ['Body']],
+      ['backpack_over_coat', ['white_coat']], ['backpack_over_scrubs', ['scrubs_top', 'Body']],
     ];
     const meshesOf = (k) => (parts[k] ? [parts[k]] : items[k]);
     for (const pose of poses) {

@@ -6,7 +6,7 @@
   "threeVersion": "0.187.0",
   "units": "metres",
   "coordinateSystem": "glTF 2.0: +Y up, characters face +Z, character left = +X",
-  "bindPose": "A-pose (arms 45 degrees below horizontal); all bone rest rotations are identity",
+  "bindPose": "A-pose (arms 55 degrees below horizontal); all bone rest rotations are identity",
   "skeleton": {
     "boneCount": 55,
     "jointOrder": [
@@ -72,16 +72,16 @@
     {
       "id": "male",
       "file": "assets/characters/male.glb",
-      "bytes": 1990744,
-      "sizeKB": 1944.1,
-      "sha256": "be51680526c90607cb13d0724659cb8fde38512d5134a72e6fb4464995a6c06f",
-      "vertices": 32397,
-      "triangles": 63238,
+      "bytes": 2775224,
+      "sizeKB": 2710.2,
+      "sha256": "d009601fd3a79c33fee76e6794beed13df7a270c97e817d80561e03f0ca9844d",
+      "vertices": 45884,
+      "triangles": 89333,
       "meshes": [
         {
           "name": "Body",
-          "vertices": 23002,
-          "triangles": 46000,
+          "vertices": 31001,
+          "triangles": 61998,
           "material": "Skin"
         },
         {
@@ -92,9 +92,21 @@
         },
         {
           "name": "Hair",
-          "vertices": 5241,
-          "triangles": 9798,
+          "vertices": 9762,
+          "triangles": 18396,
           "material": "Hair"
+        },
+        {
+          "name": "Mouth",
+          "vertices": 555,
+          "triangles": 900,
+          "material": "Mouth"
+        },
+        {
+          "name": "Teeth",
+          "vertices": 412,
+          "triangles": 599,
+          "material": "Teeth"
         },
         {
           "name": "Underwear",
@@ -111,21 +123,25 @@
       ],
       "joints": 55,
       "shoeGroundOffset": 0.016,
-      "heightMetres": 1.78
+      "groundOffset": {
+        "medical_shoes": 0.016,
+        "sneakers": 0.018
+      },
+      "heightMetres": 1.851
     },
     {
       "id": "female",
       "file": "assets/characters/female.glb",
-      "bytes": 2142800,
-      "sizeKB": 2092.6,
-      "sha256": "056d197ae5b46277f590cfbef1d7bc7b5c2ba05ba4568d2e9ed6744548d56f8f",
-      "vertices": 35166,
-      "triangles": 68236,
+      "bytes": 2934624,
+      "sizeKB": 2865.8,
+      "sha256": "396a21382702dd6bb5815bb394cd5009ba209d364772206cc96d8e0b75c8714f",
+      "vertices": 48821,
+      "triangles": 94332,
       "meshes": [
         {
           "name": "Body",
-          "vertices": 23002,
-          "triangles": 46000,
+          "vertices": 31001,
+          "triangles": 61998,
           "material": "Skin"
         },
         {
@@ -136,13 +152,25 @@
         },
         {
           "name": "Hair",
-          "vertices": 5250,
-          "triangles": 9799,
+          "vertices": 9931,
+          "triangles": 18398,
           "material": "Hair"
         },
         {
+          "name": "Mouth",
+          "vertices": 572,
+          "triangles": 900,
+          "material": "Mouth"
+        },
+        {
+          "name": "Teeth",
+          "vertices": 394,
+          "triangles": 599,
+          "material": "Teeth"
+        },
+        {
           "name": "Underwear",
-          "vertices": 6064,
+          "vertices": 6073,
           "triangles": 10997,
           "material": "Underwear"
         }
@@ -155,7 +183,11 @@
       ],
       "joints": 55,
       "shoeGroundOffset": 0.016,
-      "heightMetres": 1.665
+      "groundOffset": {
+        "medical_shoes": 0.016,
+        "sneakers": 0.018
+      },
+      "heightMetres": 1.737
     }
   ],
   "clothing": [
@@ -169,16 +201,16 @@
       },
       "details": {
         "male": {
-          "bytes": 418256,
-          "sizeKB": 408.5,
-          "sha256": "3075ac5e4066526987cca330be2c8513cd727ff1f1137bc58dcf999982d839d2",
-          "vertices": 7345,
-          "triangles": 13998,
+          "bytes": 418592,
+          "sizeKB": 408.8,
+          "sha256": "b572724ce1de02cee229c6265bdd592dd5a3ac680f6c8c794157893786b6ae6f",
+          "vertices": 7352,
+          "triangles": 14000,
           "meshes": [
             {
               "name": "ScrubsTop",
-              "vertices": 7345,
-              "triangles": 13998,
+              "vertices": 7352,
+              "triangles": 14000,
               "material": "ScrubsTop"
             }
           ],
@@ -187,16 +219,16 @@
           "joints": 55
         },
         "female": {
-          "bytes": 418304,
+          "bytes": 418312,
           "sizeKB": 408.5,
-          "sha256": "b38e5632a3d5e797a0c7bff9b42ffa4b98e501f99028038e5644989942993ae1",
+          "sha256": "47a9aef02c5d8ee69445b91ca13b27551f06d15c1271bfbf50418e6ff9624fdc",
           "vertices": 7345,
-          "triangles": 13998,
+          "triangles": 14000,
           "meshes": [
             {
               "name": "ScrubsTop",
               "vertices": 7345,
-              "triangles": 13998,
+              "triangles": 14000,
               "material": "ScrubsTop"
             }
           ],
@@ -216,9 +248,9 @@
       },
       "details": {
         "male": {
-          "bytes": 411204,
+          "bytes": 411216,
           "sizeKB": 401.6,
-          "sha256": "958292ac8e88705bf5f87b4c49845e139c5236cea8f1a2532d49ddf1958965c8",
+          "sha256": "83974155dd2f83103a2a640cc9226e6efc4eae5f373a82870dbcf9e22c6dbcea",
           "vertices": 7184,
           "triangles": 14000,
           "meshes": [
@@ -234,9 +266,9 @@
           "joints": 55
         },
         "female": {
-          "bytes": 412084,
+          "bytes": 412080,
           "sizeKB": 402.4,
-          "sha256": "39e476967b576a76bc7fb42f361609a43b3d92b43a8129cdc24eefd55791926b",
+          "sha256": "22bbdb677db64129e5e5ad9aa09480817de4ab251653166e9030c9f1ef1cbcab",
           "vertices": 7203,
           "triangles": 13999,
           "meshes": [
@@ -263,16 +295,16 @@
       },
       "details": {
         "male": {
-          "bytes": 719724,
-          "sizeKB": 702.9,
-          "sha256": "2a2c3a484b0eb58e4a656b1231389b537311e4f539f805eb8e4b89662e10efb9",
-          "vertices": 12700,
-          "triangles": 24319,
+          "bytes": 718940,
+          "sizeKB": 702.1,
+          "sha256": "0e2a00452915c932294e8d24092ff2edcf524696c8d81a0163dda4c1e3b8176a",
+          "vertices": 12682,
+          "triangles": 24318,
           "meshes": [
             {
               "name": "WhiteCoat",
-              "vertices": 12372,
-              "triangles": 23999,
+              "vertices": 12354,
+              "triangles": 23998,
               "material": "WhiteCoat"
             },
             {
@@ -287,16 +319,16 @@
           "joints": 55
         },
         "female": {
-          "bytes": 718900,
-          "sizeKB": 702.1,
-          "sha256": "d1c94f410c9a6a97e9468fefcd3eef0a48a2dedaa8818feb93cf3f61ce87954e",
+          "bytes": 718892,
+          "sizeKB": 702.0,
+          "sha256": "7ef2166a9fbe79eaefc6c9d106480bfbd857a812961ec170f5e8355d949ecf01",
           "vertices": 12680,
-          "triangles": 24320,
+          "triangles": 24319,
           "meshes": [
             {
               "name": "WhiteCoat",
               "vertices": 12352,
-              "triangles": 24000,
+              "triangles": 23999,
               "material": "WhiteCoat"
             },
             {
@@ -314,7 +346,7 @@
     },
     {
       "id": "medical_shoes",
-      "title": "Medical shoes",
+      "title": "Medical clogs",
       "slot": "feet",
       "files": {
         "male": "assets/clothing/male/medical_shoes.glb",
@@ -322,16 +354,16 @@
       },
       "details": {
         "male": {
-          "bytes": 353156,
-          "sizeKB": 344.9,
-          "sha256": "bc36a2a52deaef7cb4f660ca7e33b65260327b3fb206572a4752560e554d37b1",
-          "vertices": 6138,
-          "triangles": 11998,
+          "bytes": 358156,
+          "sizeKB": 349.8,
+          "sha256": "9b46bf87eb6538440507f954dde3389b7a65f27c74fe05b26fabd9db1e375265",
+          "vertices": 6251,
+          "triangles": 12000,
           "meshes": [
             {
               "name": "MedicalShoes",
-              "vertices": 6138,
-              "triangles": 11998,
+              "vertices": 6251,
+              "triangles": 12000,
               "material": "MedicalShoes"
             }
           ],
@@ -340,15 +372,15 @@
           "joints": 55
         },
         "female": {
-          "bytes": 352248,
-          "sizeKB": 344.0,
-          "sha256": "5f043ceb4a1b51ee9d1fb2ee79a4d66e4b9290479cf9e45eed45965af8b52498",
-          "vertices": 6116,
+          "bytes": 357260,
+          "sizeKB": 348.9,
+          "sha256": "53961f7755024fbc42e2c31270049f8c3da48235bab42cbc34a6e9ed0c27ed06",
+          "vertices": 6230,
           "triangles": 11999,
           "meshes": [
             {
               "name": "MedicalShoes",
-              "vertices": 6116,
+              "vertices": 6230,
               "triangles": 11999,
               "material": "MedicalShoes"
             }
@@ -360,6 +392,282 @@
       }
     },
     {
+      "id": "sneakers",
+      "title": "Comfortable sneakers",
+      "slot": "feet",
+      "files": {
+        "male": "assets/clothing/male/sneakers.glb",
+        "female": "assets/clothing/female/sneakers.glb"
+      },
+      "details": {
+        "male": {
+          "bytes": 536740,
+          "sizeKB": 524.2,
+          "sha256": "d006e27350a4457d3e3cb6a70398ba9992282b0e7d432debf72a6d663384491c",
+          "vertices": 9461,
+          "triangles": 17837,
+          "meshes": [
+            {
+              "name": "SneakerUpper",
+              "vertices": 5398,
+              "triangles": 9999,
+              "material": "SneakerUpper"
+            },
+            {
+              "name": "SneakerSole",
+              "vertices": 3503,
+              "triangles": 6998,
+              "material": "SneakerSole"
+            },
+            {
+              "name": "SneakerLaces",
+              "vertices": 560,
+              "triangles": 840,
+              "material": "SneakerLaces"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        },
+        "female": {
+          "bytes": 538136,
+          "sizeKB": 525.5,
+          "sha256": "b54f58c2673d78912f15f4d584d1472337e0341d8e9f9f9c725d412e889060c7",
+          "vertices": 9492,
+          "triangles": 17838,
+          "meshes": [
+            {
+              "name": "SneakerUpper",
+              "vertices": 5428,
+              "triangles": 9998,
+              "material": "SneakerUpper"
+            },
+            {
+              "name": "SneakerSole",
+              "vertices": 3504,
+              "triangles": 7000,
+              "material": "SneakerSole"
+            },
+            {
+              "name": "SneakerLaces",
+              "vertices": 560,
+              "triangles": 840,
+              "material": "SneakerLaces"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        }
+      }
+    },
+    {
+      "id": "medical_mask",
+      "title": "Surgical face mask",
+      "slot": "mouth",
+      "files": {
+        "male": "assets/clothing/male/medical_mask.glb",
+        "female": "assets/clothing/female/medical_mask.glb"
+      },
+      "details": {
+        "male": {
+          "bytes": 221672,
+          "sizeKB": 216.5,
+          "sha256": "b0df15b002db934d2418ff341588a15ec789d54cbc461f33a0465701f353ac81",
+          "vertices": 3793,
+          "triangles": 7087,
+          "meshes": [
+            {
+              "name": "MedicalMask",
+              "vertices": 2721,
+              "triangles": 4999,
+              "material": "MedicalMask"
+            },
+            {
+              "name": "MaskEarLoops",
+              "vertices": 1072,
+              "triangles": 2088,
+              "material": "MaskEarLoops"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        },
+        "female": {
+          "bytes": 221092,
+          "sizeKB": 215.9,
+          "sha256": "ba704347ed515fa06bc9628a6f18e9cde7207eb5c06e0f07048dae7b89c52c32",
+          "vertices": 3789,
+          "triangles": 7014,
+          "meshes": [
+            {
+              "name": "MedicalMask",
+              "vertices": 2753,
+              "triangles": 4998,
+              "material": "MedicalMask"
+            },
+            {
+              "name": "MaskEarLoops",
+              "vertices": 1036,
+              "triangles": 2016,
+              "material": "MaskEarLoops"
+            }
+          ],
+          "textures": [],
+          "animations": [],
+          "joints": 55
+        }
+      }
+    },
+    {
+      "id": "backpack",
+      "title": "Backpack",
+      "slot": "back",
+      "variants": {
+        "over_coat": {
+          "description": "fitted to rest on the white coat",
+          "files": {
+            "male": "assets/clothing/male/backpack_over_coat.glb",
+            "female": "assets/clothing/female/backpack_over_coat.glb"
+          },
+          "details": {
+            "male": {
+              "bytes": 239104,
+              "sizeKB": 233.5,
+              "sha256": "53a8638849499d439817a208c87b8eba43884a0c584a0579604b37a37959af74",
+              "vertices": 4035,
+              "triangles": 8022,
+              "meshes": [
+                {
+                  "name": "Backpack",
+                  "vertices": 2657,
+                  "triangles": 5310,
+                  "material": "Backpack"
+                },
+                {
+                  "name": "BackpackHandle",
+                  "vertices": 154,
+                  "triangles": 272,
+                  "material": "BackpackHandle"
+                },
+                {
+                  "name": "BackpackStraps",
+                  "vertices": 1224,
+                  "triangles": 2440,
+                  "material": "BackpackStraps"
+                }
+              ],
+              "textures": [],
+              "animations": [],
+              "joints": 55
+            },
+            "female": {
+              "bytes": 224572,
+              "sizeKB": 219.3,
+              "sha256": "cb4d4feb84e11c612e48757ec7dad230f10d2297dbe6f8c55bded0b4146f9c09",
+              "vertices": 3775,
+              "triangles": 7502,
+              "meshes": [
+                {
+                  "name": "Backpack",
+                  "vertices": 2501,
+                  "triangles": 4998,
+                  "material": "Backpack"
+                },
+                {
+                  "name": "BackpackHandle",
+                  "vertices": 154,
+                  "triangles": 272,
+                  "material": "BackpackHandle"
+                },
+                {
+                  "name": "BackpackStraps",
+                  "vertices": 1120,
+                  "triangles": 2232,
+                  "material": "BackpackStraps"
+                }
+              ],
+              "textures": [],
+              "animations": [],
+              "joints": 55
+            }
+          }
+        },
+        "over_scrubs": {
+          "description": "fitted to rest on the scrubs top (no coat)",
+          "files": {
+            "male": "assets/clothing/male/backpack_over_scrubs.glb",
+            "female": "assets/clothing/female/backpack_over_scrubs.glb"
+          },
+          "details": {
+            "male": {
+              "bytes": 234120,
+              "sizeKB": 228.6,
+              "sha256": "a23e7f21d93aa8638dff4980e0cf377b5422f85df801140860237dcf212cd6d5",
+              "vertices": 3946,
+              "triangles": 7844,
+              "meshes": [
+                {
+                  "name": "Backpack",
+                  "vertices": 2656,
+                  "triangles": 5308,
+                  "material": "Backpack"
+                },
+                {
+                  "name": "BackpackHandle",
+                  "vertices": 154,
+                  "triangles": 272,
+                  "material": "BackpackHandle"
+                },
+                {
+                  "name": "BackpackStraps",
+                  "vertices": 1136,
+                  "triangles": 2264,
+                  "material": "BackpackStraps"
+                }
+              ],
+              "textures": [],
+              "animations": [],
+              "joints": 55
+            },
+            "female": {
+              "bytes": 220988,
+              "sizeKB": 215.8,
+              "sha256": "6a3f62810fa21f7e77bfb05a3622353d13c33d945f8d1580f6e20900cd32d879",
+              "vertices": 3711,
+              "triangles": 7374,
+              "meshes": [
+                {
+                  "name": "Backpack",
+                  "vertices": 2501,
+                  "triangles": 4998,
+                  "material": "Backpack"
+                },
+                {
+                  "name": "BackpackHandle",
+                  "vertices": 154,
+                  "triangles": 272,
+                  "material": "BackpackHandle"
+                },
+                {
+                  "name": "BackpackStraps",
+                  "vertices": 1056,
+                  "triangles": 2104,
+                  "material": "BackpackStraps"
+                }
+              ],
+              "textures": [],
+              "animations": [],
+              "joints": 55
+            }
+          }
+        }
+      },
+      "variantRule": "use over_coat when white_coat is worn, otherwise over_scrubs"
+    },
+    {
       "id": "medical_cap",
       "title": "Medical (scrub) cap",
       "slot": "head",
@@ -369,16 +677,16 @@
       },
       "details": {
         "male": {
-          "bytes": 215400,
-          "sizeKB": 210.4,
-          "sha256": "06966c1d82adc26a0aae95edbd1dc5ea68997c3bbf79275d4251a737db43c70d",
-          "vertices": 3689,
-          "triangles": 6999,
+          "bytes": 242844,
+          "sizeKB": 237.2,
+          "sha256": "3a17def05a894d225bbff1f1f199620580c8f1091e5a5b72ed67a7ca9bcc44c3",
+          "vertices": 4176,
+          "triangles": 7999,
           "meshes": [
             {
               "name": "MedicalCap",
-              "vertices": 3689,
-              "triangles": 6999,
+              "vertices": 4176,
+              "triangles": 7999,
               "material": "MedicalCap"
             }
           ],
@@ -387,16 +695,16 @@
           "joints": 55
         },
         "female": {
-          "bytes": 217084,
-          "sizeKB": 212.0,
-          "sha256": "139ffb3831744f89274ad61d0be9064b6f4f6959d76d1578568fee690ee26f44",
-          "vertices": 3726,
-          "triangles": 7000,
+          "bytes": 243672,
+          "sizeKB": 238.0,
+          "sha256": "58729516b711ae71afe8bf8f39899d4b7feeae864b72613132addf35a59c64da",
+          "vertices": 4194,
+          "triangles": 8000,
           "meshes": [
             {
               "name": "MedicalCap",
-              "vertices": 3726,
-              "triangles": 7000,
+              "vertices": 4194,
+              "triangles": 8000,
               "material": "MedicalCap"
             }
           ],
@@ -419,9 +727,9 @@
           },
           "details": {
             "male": {
-              "bytes": 184892,
+              "bytes": 184904,
               "sizeKB": 180.6,
-              "sha256": "0016184c36d6fd38ea36e00520e56f4776f5424df817353f3c619436b2bd667f",
+              "sha256": "dd717caa8c51b3bafe974d70bf5e0a27265894d7608fe70f288966a830bc92ad",
               "vertices": 3093,
               "triangles": 5894,
               "meshes": [
@@ -449,16 +757,16 @@
               "joints": 55
             },
             "female": {
-              "bytes": 178276,
-              "sizeKB": 174.1,
-              "sha256": "01965e83063cdcc2186b535ccac9050399b060405660710e4d63d3432c0395a3",
-              "vertices": 2974,
-              "triangles": 5656,
+              "bytes": 178828,
+              "sizeKB": 174.6,
+              "sha256": "32266669e16dc323c470c6842d761231cfb0f48aab193ae1b0677db3b6884cff",
+              "vertices": 2984,
+              "triangles": 5676,
               "meshes": [
                 {
                   "name": "StethoscopeTubing",
-                  "vertices": 2082,
-                  "triangles": 4120,
+                  "vertices": 2092,
+                  "triangles": 4140,
                   "material": "StethoscopeTubing"
                 },
                 {
@@ -488,9 +796,9 @@
           },
           "details": {
             "male": {
-              "bytes": 177668,
+              "bytes": 177680,
               "sizeKB": 173.5,
-              "sha256": "d4ff1a9b3449d227912f9b207fc7f717d47f60c7d28fa2ef27161703a6208353",
+              "sha256": "87a8687606b4791635b9520cb39b850b8722c6ae2d0e60d40df2fc936946f6de",
               "vertices": 2964,
               "triangles": 5636,
               "meshes": [
@@ -518,16 +826,16 @@
               "joints": 55
             },
             "female": {
-              "bytes": 174916,
-              "sizeKB": 170.8,
-              "sha256": "5fcb78da656fd45b97b66a08a10048392aaf61fdf4538e6aed904feb78dff562",
-              "vertices": 2914,
-              "triangles": 5536,
+              "bytes": 175468,
+              "sizeKB": 171.4,
+              "sha256": "58240a0fed5aa19a43c91573feedd53a37569830d1e11bfad7e0a23f3b768615",
+              "vertices": 2924,
+              "triangles": 5556,
               "meshes": [
                 {
                   "name": "StethoscopeTubing",
-                  "vertices": 2022,
-                  "triangles": 4000,
+                  "vertices": 2032,
+                  "triangles": 4020,
                   "material": "StethoscopeTubing"
                 },
                 {
@@ -562,16 +870,16 @@
       },
       "details": {
         "male": {
-          "bytes": 142844,
-          "sizeKB": 139.5,
-          "sha256": "5a779b3b9a7d6ce8e59b19c7b71905f2abe91879568f033d18b0fd76ffd3609d",
-          "vertices": 2340,
-          "triangles": 4408,
+          "bytes": 133892,
+          "sizeKB": 130.8,
+          "sha256": "4e57d91f242beafbfd55766d292e683e46ebb18226d3bcb5f2aea23726db821e",
+          "vertices": 2180,
+          "triangles": 4088,
           "meshes": [
             {
               "name": "GlassesFrame",
-              "vertices": 2118,
-              "triangles": 4072,
+              "vertices": 1958,
+              "triangles": 3752,
               "material": "GlassesFrame"
             },
             {
@@ -592,16 +900,16 @@
           "joints": 55
         },
         "female": {
-          "bytes": 142784,
-          "sizeKB": 139.4,
-          "sha256": "df2d220c660a2c9a7a642e3caee9e243fd9f7f067842d0454eaa0c1ed912fcaf",
-          "vertices": 2338,
-          "triangles": 4404,
+          "bytes": 133924,
+          "sizeKB": 130.8,
+          "sha256": "121c071a1074f51e3b2662a3bb4d9d2f286f4557b69eb91428d6c7565c8a6e2e",
+          "vertices": 2180,
+          "triangles": 4088,
           "meshes": [
             {
               "name": "GlassesFrame",
-              "vertices": 2118,
-              "triangles": 4072,
+              "vertices": 1958,
+              "triangles": 3752,
               "material": "GlassesFrame"
             },
             {
@@ -612,8 +920,8 @@
             },
             {
               "name": "GlassesNosePads",
-              "vertices": 122,
-              "triangles": 236,
+              "vertices": 124,
+              "triangles": 240,
               "material": "GlassesNosePads"
             }
           ],
@@ -636,9 +944,9 @@
           },
           "details": {
             "male": {
-              "bytes": 56556,
+              "bytes": 56568,
               "sizeKB": 55.2,
-              "sha256": "67662729fe6ecb6559284a67067ddd8382e5466296be3183fe4aa81cd1e69308",
+              "sha256": "ca7b781c9fdc9ca895b99b8fef612a62516a54e8731852bd19396212f7ac02c7",
               "vertices": 422,
               "triangles": 660,
               "meshes": [
@@ -662,9 +970,9 @@
               "joints": 55
             },
             "female": {
-              "bytes": 56604,
+              "bytes": 56592,
               "sizeKB": 55.3,
-              "sha256": "108683f62897f6a3b1abe799323f227cd34147e0a9d6a196b1865135c8df132d",
+              "sha256": "260bd21bed7def4cc4f5216b22329ac7e7edb734a31feb4bfb47e617c7422ef7",
               "vertices": 422,
               "triangles": 660,
               "meshes": [
@@ -697,9 +1005,9 @@
           },
           "details": {
             "male": {
-              "bytes": 56556,
+              "bytes": 56568,
               "sizeKB": 55.2,
-              "sha256": "f29a698e427afa2a668932c621125c76e3b5c7651eac2715424f892220650b37",
+              "sha256": "38c5d99045425cc0096ef4fda35e98906f246c0339051f252f837af79395c9d8",
               "vertices": 422,
               "triangles": 660,
               "meshes": [
@@ -723,9 +1031,9 @@
               "joints": 55
             },
             "female": {
-              "bytes": 56600,
+              "bytes": 56592,
               "sizeKB": 55.3,
-              "sha256": "b8bb51cb77707bfca63185e7f8969bcdf22ad652fda879ef09828fcc991daed7",
+              "sha256": "fa7bde607a2b59dfa5d25e00c3f01cd1f7d6e31346bb579519ea435f6d329f02",
               "vertices": 422,
               "triangles": 660,
               "meshes": [
@@ -763,9 +1071,9 @@
       },
       "details": {
         "male": {
-          "bytes": 42880,
+          "bytes": 42896,
           "sizeKB": 41.9,
-          "sha256": "fa3b02149e7c5160a5ddcee45e1d51b917db58fe44938ccb2fd50fb9d3ef3b0c",
+          "sha256": "db7bef389e59c5a5a00d934dbc452ebbfecbf150e8b148e3395a12f35d9b62a2",
           "vertices": 435,
           "triangles": 656,
           "meshes": [
@@ -795,9 +1103,9 @@
           "joints": 55
         },
         "female": {
-          "bytes": 42936,
+          "bytes": 42932,
           "sizeKB": 41.9,
-          "sha256": "44c5b88b691533832b6c0eaf03d71f9472c137a2e1729bc543f6b00c52d4090f",
+          "sha256": "65b144002aa6b232a06868d987cfdefa21c811b93b7acfaf6d8b01c3ca86a348",
           "vertices": 435,
           "triangles": 656,
           "meshes": [
@@ -833,9 +1141,9 @@
     {
       "id": "idle",
       "file": "assets/animations/idle.glb",
-      "bytes": 72332,
+      "bytes": 72344,
       "sizeKB": 70.6,
-      "sha256": "4016475235106c0f63e0d42b165642c6680b61e3df79493005cc5e9f7c4e4370",
+      "sha256": "f884b626833c7a7b1f36800e2ef105c64633af935c0c6714f62a17d8772424cd",
       "vertices": 0,
       "triangles": 0,
       "meshes": [],
@@ -866,16 +1174,16 @@
     },
     {
       "file": "assets/textures/iris_female.png",
-      "bytes": 5772,
-      "sizeKB": 5.6,
-      "sha256": "eb6bdab241d596b7dada6b41daee9a09470dda5228de64464b18d2884e41531c",
+      "bytes": 5917,
+      "sizeKB": 5.8,
+      "sha256": "90ff44945e5e06e8fa5092a1b70b9005898bd26379b112b2b8ece82e6477c45a",
       "note": "embedded in the GLB files that use it; provided separately for editing"
     },
     {
       "file": "assets/textures/iris_male.png",
-      "bytes": 5606,
-      "sizeKB": 5.5,
-      "sha256": "7dcf6579e4db3699495050d3fa97e60fa366a5a5cf2cc49bb339f94d87999399",
+      "bytes": 5791,
+      "sizeKB": 5.7,
+      "sha256": "cd2addf1c6b30e131c7abd4637b55ceb3a0846cea6e4a2d6e55502ed2c342c8a",
       "note": "embedded in the GLB files that use it; provided separately for editing"
     },
     {
@@ -886,5 +1194,5 @@
       "note": "embedded in the GLB files that use it; provided separately for editing"
     }
   ],
-  "totalAssetBytes": 9807375
+  "totalAssetBytes": 13874772
 }

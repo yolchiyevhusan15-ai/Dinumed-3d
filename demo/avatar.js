@@ -1,5 +1,5 @@
 // DINUMED avatar runtime: loads a character GLB, attaches clothing GLBs to the
-// character's skeleton (by bone name) and plays the idle animation.
+// character's skeleton (by bone name), recolours items and plays the idle animation.
 // Depends only on the locally vendored three.js r187 (see ../vendor/three).
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -10,18 +10,22 @@ export function loadGLTF(url) {
   return new Promise((resolve, reject) => loader.load(url, resolve, undefined, reject));
 }
 
-export async function loadManifest(base = '../') {
-  const r = await fetch(base + 'assets/manifest.json');
-  if (!r.ok) throw new Error('manifest.json not found');
+export async function loadJSON(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(url + ' not found');
   return r.json();
 }
 
-/** Pick the right file for a clothing item given what else is worn. */
-export function resolveItemFile(manifest, gender, id, worn) {
+export const loadManifest = (base = '../') => loadJSON(base + 'assets/manifest.json');
+export const loadCatalog = (base = '../') => loadJSON(base + 'assets/catalog.json');
+
+/** Pick the right file for a clothing asset given the other worn assets.
+ *  Items that rest on clothing (stethoscope, ID card, backpack) have two fits. */
+export function resolveItemFile(manifest, gender, id, wornAssets) {
   const item = manifest.clothing.find((c) => c.id === id);
   if (!item) throw new Error('unknown item ' + id);
   if (item.variants) {
-    const v = worn.has('white_coat') ? 'over_coat' : 'over_scrubs';
+    const v = wornAssets.has('white_coat') ? 'over_coat' : 'over_scrubs';
     return item.variants[v].files[gender];
   }
   return item.files[gender];
@@ -46,6 +50,14 @@ export function attachClothing(characterRoot, characterBones, clothingScene) {
   return meshes;
 }
 
+/** Give each mesh its own material and apply {meshName: '#rrggbb'} overrides. */
+export function applyColors(meshes, colors = {}) {
+  for (const m of meshes) {
+    m.material = m.material.clone();
+    if (colors[m.name]) m.material.color.set(colors[m.name]);
+  }
+}
+
 export class Avatar {
   constructor(scene, manifest, base = '../') {
     this.scene = scene;
@@ -54,21 +66,25 @@ export class Avatar {
     this.gender = null;
     this.root = null;
     this.bones = new Map();
-    this.items = new Map(); // id -> {file, meshes}
+    this.parts = {};           // character meshes by name (Body, Hair, ...)
+    this.items = new Map();    // key -> {file, meshes, sig}
+    this.outfit = [];
     this.mixer = null;
     this.action = null;
     this.idleClip = null;
     this.cache = new Map();
+    this.skin = null;
+    this.hair = null;
   }
 
-  async _gltf(file) {
+  gltf(file) {
     if (!this.cache.has(file)) this.cache.set(file, loadGLTF(this.base + file));
     return this.cache.get(file);
   }
 
   async setGender(gender) {
     if (this.gender === gender) return;
-    const worn = [...this.items.keys()];
+    const outfit = this.outfit;
     this.clear();
     const ch = this.manifest.characters.find((c) => c.id === gender);
     const gltf = await loadGLTF(this.base + ch.file);
@@ -77,51 +93,72 @@ export class Avatar {
     this.root.name = 'Avatar_' + gender;
     this.root.traverse((o) => {
       if (o.isBone) this.bones.set(o.name, o);
-      if (o.isMesh) { o.castShadow = true; o.frustumCulled = false; }
+      if (o.isMesh) { o.castShadow = true; o.frustumCulled = false; this.parts[o.name] = o; o.material = o.material.clone(); }
     });
-    this.embeddedClips = gltf.animations;
+    this.hairBase = this.parts.Hair ? this.parts.Hair.material.color.clone() : null;
     this.scene.add(this.root);
     this.mixer = new THREE.AnimationMixer(this.root);
     if (!this.idleClip) {
-      const anim = this.manifest.animations[0];
-      const a = await loadGLTF(this.base + anim.file);
+      const a = await loadGLTF(this.base + this.manifest.animations[0].file);
       this.idleClip = a.animations[0];
     }
     this.action = this.mixer.clipAction(this.idleClip);
-    await this.setItems(worn);
+    this.setSkin(this.skin);
+    this.setHair(this.hair);
+    await this.setOutfit(outfit);
   }
 
   clear() {
     if (this.root) this.scene.remove(this.root);
     this.items.clear();
     this.bones.clear();
+    this.parts = {};
     this.root = null;
     this.gender = null;
   }
 
-  async setItems(ids) {
-    const want = new Set(ids);
-    // decide the file for every wanted item (variants depend on the full set)
-    const files = new Map([...want].map((id) => [id, resolveItemFile(this.manifest, this.gender, id, want)]));
-    for (const [id, it] of [...this.items]) {
-      if (!want.has(id) || files.get(id) !== it.file) {
+  /** entries: [{key, asset, colors}] - `asset` is a manifest clothing id. */
+  async setOutfit(entries) {
+    this.outfit = entries;
+    const assets = new Set(entries.map((e) => e.asset));
+    const want = new Map(entries.map((e) => [e.key, {
+      ...e, file: resolveItemFile(this.manifest, this.gender, e.asset, assets),
+    }]));
+    for (const [key, it] of [...this.items]) {
+      const w = want.get(key);
+      if (!w || w.file !== it.file) {
         it.meshes.forEach((m) => m.removeFromParent());
-        this.items.delete(id);
+        this.items.delete(key);
       }
     }
-    for (const id of want) {
-      if (this.items.has(id)) continue;
-      const file = files.get(id);
-      const gltf = await this._gltf(file);
-      const scene = gltf.scene.clone(true); // clone so the cache stays reusable
-      // SkinnedMesh clones share skeleton; rebuild from names
-      const meshes = attachClothing(this.root, this.bones, scene);
+    for (const [key, w] of want) {
+      if (this.items.has(key)) continue;
+      const gltf = await this.gltf(w.file);
+      if (this.outfit !== entries) return;          // superseded by a newer call
+      const meshes = attachClothing(this.root, this.bones, gltf.scene.clone(true));
+      applyColors(meshes, w.colors);
       meshes.forEach((m) => { m.castShadow = true; });
-      this.items.set(id, { file, meshes });
+      this.items.set(key, { file: w.file, meshes });
     }
-    // standing on shoe soles
-    const fit = this.manifest.characters.find((c) => c.id === this.gender).shoeGroundOffset || 0;
-    this.root.position.y = want.has('medical_shoes') ? fit : 0;
+    // stand on the soles of whatever footwear is worn
+    const ch = this.manifest.characters.find((c) => c.id === this.gender);
+    const go = ch.groundOffset || {};
+    let lift = 0;
+    for (const a of assets) if (go[a]) lift = Math.max(lift, go[a]);
+    this.root.position.y = lift;
+  }
+
+  /** Simple helper: wear manifest clothing ids with their default colours. */
+  setItems(ids) { return this.setOutfit(ids.map((id) => ({ key: id, asset: id, colors: {} }))); }
+
+  setSkin(hex) {
+    this.skin = hex || null;
+    if (this.parts.Body) this.parts.Body.material.color.set(hex || '#ffffff');
+  }
+
+  setHair(hex) {
+    this.hair = hex || null;
+    if (this.parts.Hair) { if (hex) this.parts.Hair.material.color.set(hex); else this.parts.Hair.material.color.copy(this.hairBase); }
   }
 
   play(on = true) {
@@ -136,6 +173,11 @@ export class Avatar {
     this.action.time = t % this.idleClip.duration;
     this.mixer.update(0);
     this.action.paused = true;
+  }
+
+  bindPose() {
+    if (this.action) this.action.stop();
+    this.bones.forEach((b) => b.quaternion.identity());
   }
 
   update(dt) { if (this.mixer) this.mixer.update(dt); }

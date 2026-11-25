@@ -1,4 +1,9 @@
 {
   "gender": "male",
+  "heightMetres": 1.851,
+  "groundOffset": {
+    "medical_shoes": 0.016,
+    "sneakers": 0.018
+  },
   "shoeGroundOffset": 0.016
 }

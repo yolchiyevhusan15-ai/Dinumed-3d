@@ -1,0 +1,380 @@
+{
+  "currency": "DC",
+  "startBalance": 300,
+  "levels": [
+    {
+      "level": 1,
+      "title": "Talaba",
+      "xp": 0
+    },
+    {
+      "level": 2,
+      "title": "Intern",
+      "xp": 300
+    },
+    {
+      "level": 3,
+      "title": "Ordinator",
+      "xp": 800
+    },
+    {
+      "level": 4,
+      "title": "Shifokor",
+      "xp": 1500
+    },
+    {
+      "level": 5,
+      "title": "Mutaxassis",
+      "xp": 2500
+    },
+    {
+      "level": 6,
+      "title": "Professor",
+      "xp": 4000
+    }
+  ],
+  "defaultOwned": [
+    "scrub_navy",
+    "pants_gray",
+    "coat_basic",
+    "glasses",
+    "steth_black",
+    "watch",
+    "backpack",
+    "sneakers"
+  ],
+  "defaultWorn": [
+    "scrub_navy",
+    "pants_gray",
+    "coat_basic",
+    "glasses",
+    "steth_black",
+    "watch",
+    "backpack",
+    "sneakers"
+  ],
+  "categories": [
+    {
+      "id": "scrubs",
+      "title": "Jarrohlik kiyimi",
+      "slot": "top"
+    },
+    {
+      "id": "pants",
+      "title": "Shimlar",
+      "slot": "legs"
+    },
+    {
+      "id": "coats",
+      "title": "Professional tibbiy xalatlar",
+      "slot": "coat"
+    },
+    {
+      "id": "acc",
+      "title": "Aksessuarlar"
+    },
+    {
+      "id": "shoes",
+      "title": "Poyabzallar",
+      "slot": "feet"
+    }
+  ],
+  "items": [
+    {
+      "id": "scrub_navy",
+      "category": "scrubs",
+      "slot": "top",
+      "asset": "scrubs_top",
+      "title": "To'q ko'k",
+      "price": 0,
+      "colors": {
+        "ScrubsTop": "#34496f"
+      }
+    },
+    {
+      "id": "scrub_teal",
+      "category": "scrubs",
+      "slot": "top",
+      "asset": "scrubs_top",
+      "title": "Firuza",
+      "price": 80,
+      "colors": {
+        "ScrubsTop": "#1c9aa6"
+      }
+    },
+    {
+      "id": "scrub_green",
+      "category": "scrubs",
+      "slot": "top",
+      "asset": "scrubs_top",
+      "title": "Yashil",
+      "price": 80,
+      "colors": {
+        "ScrubsTop": "#2f9a62"
+      }
+    },
+    {
+      "id": "pants_gray",
+      "category": "pants",
+      "slot": "legs",
+      "asset": "medical_trousers",
+      "title": "Kulrang shim",
+      "price": 0,
+      "colors": {
+        "MedicalTrousers": "#4f555e"
+      }
+    },
+    {
+      "id": "pants_navy",
+      "category": "pants",
+      "slot": "legs",
+      "asset": "medical_trousers",
+      "title": "To'q ko'k shim",
+      "price": 60,
+      "colors": {
+        "MedicalTrousers": "#2b3d63"
+      }
+    },
+    {
+      "id": "pants_teal",
+      "category": "pants",
+      "slot": "legs",
+      "asset": "medical_trousers",
+      "title": "Firuza shim",
+      "price": 60,
+      "colors": {
+        "MedicalTrousers": "#1c9aa6"
+      }
+    },
+    {
+      "id": "coat_basic",
+      "category": "coats",
+      "slot": "coat",
+      "asset": "white_coat",
+      "title": "Oddiy oq xalat",
+      "price": 0,
+      "colors": {}
+    },
+    {
+      "id": "coat_lux",
+      "category": "coats",
+      "slot": "coat",
+      "asset": "white_coat",
+      "title": "Lyuks tibbiy xalat",
+      "tag": "Premium",
+      "price": 120,
+      "colors": {
+        "WhiteCoat": "#f4f1ea",
+        "CoatButtons": "#1c9aa6"
+      }
+    },
+    {
+      "id": "coat_modern",
+      "category": "coats",
+      "slot": "coat",
+      "asset": "white_coat",
+      "title": "Zamonaviy oq xalat",
+      "tag": "Eksklyuziv",
+      "price": 150,
+      "colors": {
+        "WhiteCoat": "#f2f6f8",
+        "CoatButtons": "#24386b"
+      }
+    },
+    {
+      "id": "steth_black",
+      "category": "acc",
+      "slot": "neck",
+      "asset": "stethoscope",
+      "title": "Stetoskop",
+      "price": 0,
+      "colors": {
+        "StethoscopeTubing": "#1a1a1e"
+      }
+    },
+    {
+      "id": "steth_purple",
+      "category": "acc",
+      "slot": "neck",
+      "asset": "stethoscope",
+      "title": "Binafsha stetoskop",
+      "price": 90,
+      "colors": {
+        "StethoscopeTubing": "#6b46a8"
+      }
+    },
+    {
+      "id": "glasses",
+      "category": "acc",
+      "slot": "face",
+      "asset": "glasses",
+      "title": "Ko'zoynak",
+      "price": 0,
+      "colors": {}
+    },
+    {
+      "id": "badge",
+      "category": "acc",
+      "slot": "chest",
+      "asset": "id_card",
+      "title": "Beyjik",
+      "price": 30,
+      "colors": {}
+    },
+    {
+      "id": "mask_blue",
+      "category": "acc",
+      "slot": "mouth",
+      "asset": "medical_mask",
+      "title": "Tibbiy niqob",
+      "price": 20,
+      "colors": {
+        "MedicalMask": "#93c4ea"
+      }
+    },
+    {
+      "id": "mask_green",
+      "category": "acc",
+      "slot": "mouth",
+      "asset": "medical_mask",
+      "title": "Yashil niqob",
+      "price": 20,
+      "colors": {
+        "MedicalMask": "#7cc7a8"
+      }
+    },
+    {
+      "id": "watch",
+      "category": "acc",
+      "slot": "wrist",
+      "asset": "watch",
+      "title": "Soat",
+      "price": 0,
+      "colors": {}
+    },
+    {
+      "id": "cap_teal",
+      "category": "acc",
+      "slot": "head",
+      "asset": "medical_cap",
+      "title": "Jarrohlik qalpoqchasi",
+      "price": 30,
+      "colors": {
+        "MedicalCap": "#2a9aa8"
+      }
+    },
+    {
+      "id": "cap_navy",
+      "category": "acc",
+      "slot": "head",
+      "asset": "medical_cap",
+      "title": "To'q ko'k qalpoqcha",
+      "price": 30,
+      "colors": {
+        "MedicalCap": "#2b3d63"
+      }
+    },
+    {
+      "id": "backpack",
+      "category": "acc",
+      "slot": "back",
+      "asset": "backpack",
+      "title": "Ryukzak",
+      "price": 0,
+      "colors": {}
+    },
+    {
+      "id": "clogs_white",
+      "category": "shoes",
+      "slot": "feet",
+      "asset": "medical_shoes",
+      "title": "Oq sabolar",
+      "price": 40,
+      "colors": {}
+    },
+    {
+      "id": "clogs_teal",
+      "category": "shoes",
+      "slot": "feet",
+      "asset": "medical_shoes",
+      "title": "Tibbiy sabolar",
+      "price": 70,
+      "colors": {
+        "MedicalShoes": "#3fb7ae"
+      }
+    },
+    {
+      "id": "sneakers",
+      "category": "shoes",
+      "slot": "feet",
+      "asset": "sneakers",
+      "title": "Qulay krossovkalar",
+      "price": 0,
+      "colors": {}
+    }
+  ],
+  "appearance": {
+    "skin": [
+      {
+        "id": "light",
+        "title": "Och",
+        "color": "#fff2ee"
+      },
+      {
+        "id": "base",
+        "title": "O'rta",
+        "color": "#ffffff"
+      },
+      {
+        "id": "tan",
+        "title": "Bug'doyrang",
+        "color": "#d9b8a2"
+      },
+      {
+        "id": "dark",
+        "title": "Qora",
+        "color": "#9c7a66"
+      }
+    ],
+    "hair": [
+      {
+        "id": "brown",
+        "title": "Jigarrang",
+        "color": null
+      },
+      {
+        "id": "black",
+        "title": "Qora",
+        "color": "#2a1e18"
+      },
+      {
+        "id": "blonde",
+        "title": "Sariq",
+        "color": "#b8874e"
+      },
+      {
+        "id": "auburn",
+        "title": "Mallarang",
+        "color": "#8a3f22"
+      }
+    ]
+  },
+  "earn": [
+    {
+      "title": "Kunlik kirish",
+      "dc": 10
+    },
+    {
+      "title": "Test yechish (10 savol)",
+      "dc": 20
+    },
+    {
+      "title": "Klinik holatni hal qilish",
+      "dc": 50
+    },
+    {
+      "title": "Amaliy ko'nikma (OSKE) topshirish",
+      "dc": 80
+    }
+  ]
+}

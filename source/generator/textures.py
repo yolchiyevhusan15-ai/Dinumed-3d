@@ -36,7 +36,7 @@ def iris(color, size=256, seed=1):
     # faint veins near the back
     veins = (np.sin(U * 2 * np.pi * 23 + rng.uniform(0, 6)) * np.sin(V * 40) > 0.97) & (th > 0.9)
     img[veins] = [0.85, 0.6, 0.6]
-    iris_r, pupil_r = 0.52, 0.20
+    iris_r, pupil_r = 0.56, 0.25
     col = np.asarray(color, float)
     streak = 0.75 + 0.25 * np.sin(U * 2 * np.pi * 60 + rng.uniform(0, 6)) * np.sin(U * 2 * np.pi * 17)
     t = np.clip(th / iris_r, 0, 1)
@@ -51,8 +51,10 @@ def iris(color, size=256, seed=1):
     m_bl = (th >= iris_r) & (th < iris_r + 0.06)
     img[m_bl] = (img * blend + col * 0.35 * (1 - blend))[m_bl]
     # catch-light
-    hl = ((th - 0.30) ** 2 * 60 + (U - 0.35) ** 2 * 80) < 0.02
-    img[hl & (th < iris_r)] = [0.95, 0.95, 0.95]
+    hl = ((th - 0.34) ** 2 * 40 + (U - 0.38) ** 2 * 60) < 0.02          # cartoon highlights
+    img[hl & (th < iris_r)] = [1.0, 1.0, 1.0]
+    hl2 = ((th - 0.30) ** 2 * 120 + (U - 0.88) ** 2 * 160) < 0.02
+    img[hl2 & (th < iris_r)] = [0.92, 0.92, 0.92]
     return Image.fromarray(np.clip(img * 255, 0, 255).astype(np.uint8))
 
 

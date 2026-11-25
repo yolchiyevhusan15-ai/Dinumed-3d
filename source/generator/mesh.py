@@ -94,8 +94,41 @@ def clip_mesh(P, F, r):
     return P2, F2
 
 
+class DensityWarp:
+    """Temporarily magnifies everything above ``y0`` by factor ``k`` (smoothly,
+    between y0 and y1) so that the quadric decimator keeps ~k^2 more triangles
+    per unit area there (used to give the face more detail than the body)."""
+
+    def __init__(self, y0, y1, k, zc=0.0):
+        self.y0, self.y1, self.k, self.zc = y0, y1, k, zc
+        self.ys = np.linspace(y0 - 3.0, y1 + 3.0, 60001)
+        s = self.scale(self.ys)
+        self.Y = np.concatenate([[0], np.cumsum(0.5 * (s[1:] + s[:-1]) * np.diff(self.ys))]) + self.ys[0]
+
+    def scale(self, y):
+        t = np.clip((y - self.y0) / (self.y1 - self.y0), 0, 1)
+        return 1 + (self.k - 1) * t * t * (3 - 2 * t)
+
+    def fwd(self, P):
+        s = self.scale(P[:, 1])
+        Q = P.copy()
+        Q[:, 0] = P[:, 0] * s
+        Q[:, 2] = self.zc + (P[:, 2] - self.zc) * s
+        Q[:, 1] = np.interp(P[:, 1], self.ys, self.Y)
+        return Q
+
+    def inv(self, Q):
+        y = np.interp(Q[:, 1], self.Y, self.ys)
+        s = self.scale(y)
+        P = Q.copy()
+        P[:, 1] = y
+        P[:, 0] = Q[:, 0] / s
+        P[:, 2] = self.zc + (Q[:, 2] - self.zc) / s
+        return P
+
+
 def extract(node, lo, hi, h, target_tris, normal_node=None, open_node=None,
-            cap_eps=None, min_frac=0.02, project_iters=3, log=None, clip=None):
+            cap_eps=None, min_frac=0.02, project_iters=3, log=None, clip=None, warp=None):
     """Marching cubes on ``node``.
 
     open_node: if given, faces whose centroid lies strictly inside open_node
@@ -125,8 +158,12 @@ def extract(node, lo, hi, h, target_tris, normal_node=None, open_node=None,
     n0 = len(f)
     if len(f) > target_tris:
         red = 1.0 - target_tris / len(f)
+        if warp is not None:
+            v = warp.fwd(v)
         v, f = fast_simplification.simplify(v.astype(np.float32), f.astype(np.int32), red, agg=6)
         v = v.astype(np.float64)
+        if warp is not None:
+            v = warp.inv(v)
         f = f.astype(np.int64)
         v, f, _ = compact(v, f)
     if project_iters:

@@ -34,21 +34,27 @@ const t0 = Date.now();
 await page.goto(`http://127.0.0.1:${PORT}/tests/threejs-test.html`);
 const res = await page.evaluate(() => window.__results);
 if (res.error) { console.error(res.error); }
-// demo smoke test (both genders, full outfit)
+// garderob (shop) smoke test: both genders render, a purchase works, thumbnails are generated
 const demo = [];
 for (const g of ['male', 'female']) {
-  await page.goto(`http://127.0.0.1:${PORT}/demo/?gender=${g}&cam=front&t=2`);
+  await page.goto(`http://127.0.0.1:${PORT}/demo/?fresh=1&gender=${g}&cam=front&t=2`);
   await page.waitForFunction(() => window.__ready === true, null, { timeout: 120000 });
-  await page.waitForTimeout(500);
+  await page.waitForFunction(() => window.__thumbsReady === true, null, { timeout: 180000 });
+  await page.waitForTimeout(400);
+  const before = await page.evaluate(() => ({ balance: window.__state.balance, worn: window.__state.worn.length }));
+  await page.click('.card[data-id="scrub_teal"] .buy');
+  await page.waitForFunction(() => window.__state.worn.includes('scrub_teal'), null, { timeout: 30000 });
+  await page.waitForTimeout(600);
   const stats = await page.evaluate(() => {
-    const c = document.querySelector('#view canvas');
+    const c = document.querySelector('#stage canvas');
     const x = document.createElement('canvas'); x.width = 64; x.height = 64;
     const k = x.getContext('2d'); k.drawImage(c, 0, 0, 64, 64);
-    const d = k.getImageData(0, 0, 64, 64).data; let mn = 255, mx = 0;
-    for (let i = 0; i < d.length; i += 4) { const v = d[i] + d[i + 1] + d[i + 2]; mn = Math.min(mn, v); mx = Math.max(mx, v); }
-    return { contrast: mx - mn, status: document.querySelector('#status').textContent };
+    const d = k.getImageData(0, 0, 64, 64).data; let mn = 255 * 4, mx = 0;
+    for (let i = 0; i < d.length; i += 4) { const v = d[i] + d[i + 1] + d[i + 2] + d[i + 3]; mn = Math.min(mn, v); mx = Math.max(mx, v); }
+    return { contrast: mx - mn, balance: window.__state.balance, worn: window.__state.worn.length,
+             thumbs: document.querySelectorAll('.thumb img').length, cards: document.querySelectorAll('.card').length };
   });
-  demo.push({ gender: g, ...stats });
+  demo.push({ gender: g, before, ...stats });
 }
 await browser.close();
 server.close();
@@ -56,7 +62,11 @@ server.close();
 const checks = res.checks || [];
 checks.push({ name: 'no network request left the machine (offline)', pass: external.length === 0, detail: external.join(', ') });
 checks.push({ name: 'no page / console errors', pass: errors.length === 0, detail: errors.join(' | ') });
-for (const d of demo) checks.push({ name: `demo renders ${d.gender} with full outfit (non-blank canvas)`, pass: d.contrast > 100 && /9 item/.test(d.status), detail: d.status.split('\n')[0] });
+for (const d of demo) {
+  checks.push({ name: `garderob renders ${d.gender} avatar (non-blank canvas, ${d.worn} items worn)`, pass: d.contrast > 100 && d.worn >= 8, detail: `contrast ${d.contrast}` });
+  checks.push({ name: `garderob ${d.gender}: buying an item deducts DC and wears it`, pass: d.balance === d.before.balance - 80, detail: `${d.before.balance} -> ${d.balance} DC` });
+  checks.push({ name: `garderob ${d.gender}: every shop card has a rendered thumbnail`, pass: d.thumbs === d.cards && d.cards > 15, detail: `${d.thumbs}/${d.cards}` });
+}
 const passed = !res.error && checks.every((c) => c.pass);
 const report = { date: new Date().toISOString(), three: res.info && res.info.three, passed, seconds: (Date.now() - t0) / 1000,
   checks, clipping: res.clipping, contact: res.contact, external, errors };

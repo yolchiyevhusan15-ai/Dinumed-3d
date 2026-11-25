@@ -15,7 +15,10 @@ ITEMS = [
     ("scrubs_top", "Surgical scrubs (top)", "torso-mid"),
     ("medical_trousers", "Medical trousers (scrub pants)", "legs"),
     ("white_coat", "White medical coat", "torso-outer"),
-    ("medical_shoes", "Medical shoes", "feet"),
+    ("medical_shoes", "Medical clogs", "feet"),
+    ("sneakers", "Comfortable sneakers", "feet"),
+    ("medical_mask", "Surgical face mask", "mouth"),
+    ("backpack", "Backpack", "back"),
     ("medical_cap", "Medical (scrub) cap", "head"),
     ("stethoscope", "Stethoscope", "neck-accessory"),
     ("glasses", "Glasses", "face"),
@@ -63,7 +66,7 @@ def main():
         "threeVersion": "0.187.0",
         "units": "metres",
         "coordinateSystem": "glTF 2.0: +Y up, characters face +Z, character left = +X",
-        "bindPose": "A-pose (arms 45 degrees below horizontal); all bone rest rotations are identity",
+        "bindPose": "A-pose (arms 55 degrees below horizontal); all bone rest rotations are identity",
         "skeleton": {"boneCount": len(bone_names()), "jointOrder": bone_names(),
                      "naming": "Mixamo-style names without prefix; identical joint order and names in every GLB"},
         "characters": [], "clothing": [], "animations": [], "textures": [],
@@ -72,12 +75,12 @@ def main():
         p = os.path.join(A, "characters", f"{g}.glb")
         fit = json.load(open(os.path.join(A, "clothing", g, "_fit.json")))
         e = {"id": g, "file": rel(p), **glb_info(p), "shoeGroundOffset": fit["shoeGroundOffset"],
-             "heightMetres": 1.78 if g == "male" else 1.665}
+             "groundOffset": fit["groundOffset"], "heightMetres": fit["heightMetres"]}
         man["characters"].append(e)
     for iid, title, slot in ITEMS:
         e = {"id": iid, "title": title, "slot": slot}
         variants = None
-        if iid in ("stethoscope", "id_card"):
+        if iid in ("stethoscope", "id_card", "backpack"):
             variants = {}
             for v, desc in (("over_coat", "fitted to rest on the white coat"),
                             ("over_scrubs", "fitted to rest on the scrubs top (no coat)")):

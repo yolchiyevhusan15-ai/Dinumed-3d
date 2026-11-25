@@ -1,33 +1,80 @@
 <!doctype html>
-<html lang="en">
+<html lang="uz">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DINUMED Avatar Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DINUMED Garderob</title>
 <style>
-  :root { --bg:#eef2f4; --panel:#ffffff; --ink:#16232b; --muted:#5b6b75; --accent:#00798c; --line:#d5dde2; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#12181c; --panel:#1b2329; --ink:#e6edf1; --muted:#93a3ad; --accent:#3fb6c9; --line:#2c3840; } }
-  * { box-sizing: border-box; }
-  html, body { margin:0; height:100%; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  #app { display:flex; height:100%; }
-  #panel { width:290px; flex:none; background:var(--panel); border-right:1px solid var(--line); padding:16px; overflow:auto; }
-  #view { flex:1; position:relative; min-width:0; }
-  canvas { display:block; width:100%; height:100%; }
-  h1 { font-size:17px; margin:0 0 2px; letter-spacing:.04em; }
-  .sub { color:var(--muted); font-size:12px; margin-bottom:14px; }
-  h2 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:16px 0 6px; }
-  .seg { display:flex; gap:6px; }
-  .seg button { flex:1; padding:8px; border:1px solid var(--line); background:transparent; color:var(--ink); border-radius:6px; cursor:pointer; font:inherit; }
-  .seg button.on { background:var(--accent); border-color:var(--accent); color:#fff; }
-  label.item { display:flex; align-items:center; gap:8px; padding:5px 0; cursor:pointer; }
-  .row { display:flex; gap:6px; flex-wrap:wrap; }
-  .row button { padding:6px 10px; border:1px solid var(--line); background:transparent; color:var(--ink); border-radius:6px; cursor:pointer; font:inherit; font-size:12px; }
-  #status { font-size:12px; color:var(--muted); margin-top:14px; white-space:pre-wrap; }
-  #status.err { color:#c0392b; }
-  @media (max-width: 700px) {
-    #app { flex-direction:column; }
-    #panel { width:100%; max-height:45%; border-right:none; border-bottom:1px solid var(--line); }
+  :root {
+    --bg0:#0e6068; --bg1:#0a3f4c; --bg2:#06242f;
+    --panel:#0b2a38; --panel2:#0f3545; --line:#1d4b5c;
+    --ink:#eaf6f7; --muted:#9bbcc4; --mint:#7ef0c8; --mint-ink:#06342b;
+    --thumb0:#8fd6cf; --thumb1:#5fb3b3; --gold:#f6c343; --danger:#ff8f8f;
   }
+  * { box-sizing:border-box; }
+  html, body { margin:0; min-height:100%; }
+  body {
+    color:var(--ink); font:14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+    background:linear-gradient(160deg, var(--bg0) 0%, var(--bg1) 45%, var(--bg2) 100%) fixed;
+  }
+  button { font:inherit; color:inherit; cursor:pointer; }
+  header { display:flex; align-items:center; gap:12px; padding:12px 16px; }
+  .brand { font-weight:800; letter-spacing:.08em; font-size:18px; }
+  .brand small { display:block; font-weight:500; letter-spacing:.02em; font-size:11px; color:var(--muted); }
+  .spacer { flex:1; }
+  .chip { display:inline-flex; align-items:center; gap:7px; padding:7px 12px; border-radius:999px;
+          background:rgba(4,26,36,.65); border:1px solid var(--line); font-weight:700; white-space:nowrap; }
+  .coin { width:14px; height:14px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #ffe9a6, var(--gold) 55%, #b98512); display:inline-block; flex:none; }
+  main { display:grid; grid-template-columns:minmax(0,1fr) minmax(360px,520px); gap:16px; padding:0 16px 16px; align-items:start; }
+  #stage { position:sticky; top:12px; height:calc(100vh - 84px); min-height:420px; border-radius:18px; overflow:hidden;
+           background:radial-gradient(120% 80% at 50% 35%, #17808a 0%, #0c5560 45%, #083642 100%); border:1px solid var(--line); }
+  #stage canvas { display:block; width:100%; height:100%; touch-action:none; }
+  .overlay { position:absolute; left:12px; right:12px; bottom:12px; display:flex; gap:8px; flex-wrap:wrap; align-items:center; pointer-events:none; }
+  .overlay > * { pointer-events:auto; }
+  .seg { display:inline-flex; background:rgba(4,26,36,.7); border:1px solid var(--line); border-radius:999px; padding:3px; }
+  .seg button { border:0; background:transparent; padding:7px 14px; border-radius:999px; color:var(--muted); font-weight:600; }
+  .seg button.on { background:var(--mint); color:var(--mint-ink); }
+  #loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--muted); pointer-events:none; }
+  #panel { background:rgba(8,34,46,.82); border:1px solid var(--line); border-radius:18px; padding:12px; }
+  .tabs { display:grid; grid-template-columns:repeat(3,1fr); background:rgba(4,26,36,.75); border:1px solid var(--line); border-radius:12px; padding:3px; }
+  .tabs button { border:0; background:transparent; padding:9px 4px; border-radius:9px; color:var(--muted); font-weight:700; }
+  .tabs button.on { background:var(--panel2); color:var(--ink); box-shadow:inset 0 0 0 1px var(--line); }
+  h3 { margin:16px 4px 8px; font-size:15px; }
+  .grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:8px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:5px; display:flex; flex-direction:column; min-width:0; }
+  .card.worn { border-color:var(--mint); box-shadow:0 0 0 1px var(--mint) inset; }
+  .thumb { aspect-ratio:1/1; border-radius:9px; background:linear-gradient(160deg, var(--thumb0), var(--thumb1)); overflow:hidden; position:relative; }
+  .thumb img { width:100%; height:100%; object-fit:contain; display:block; }
+  .tag { position:absolute; left:6px; top:6px; font-size:10px; font-weight:700; padding:2px 6px; border-radius:999px; background:rgba(4,26,36,.75); color:var(--gold); }
+  .name { font-size:12px; font-weight:600; padding:6px 3px 5px; min-height:38px; overflow-wrap:anywhere; }
+  .buy { border:0; border-radius:8px; padding:7px 4px; background:var(--mint); color:var(--mint-ink); font-weight:700; font-size:12px; width:100%; margin-top:auto;
+         display:flex; flex-wrap:wrap; gap:2px 6px; justify-content:center; align-items:center; min-height:34px; }
+  .buy .pr { display:inline-flex; align-items:center; gap:4px; }
+  .buy.owned { background:transparent; color:var(--mint); box-shadow:inset 0 0 0 1px var(--mint); }
+  .buy.on { background:rgba(126,240,200,.16); color:var(--ink); box-shadow:inset 0 0 0 1px var(--line); }
+  .buy.poor { opacity:.55; }
+  .box { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:12px; margin-top:10px; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .sw { width:38px; height:38px; border-radius:50%; border:2px solid var(--line); padding:0; }
+  .sw.on { border-color:var(--mint); box-shadow:0 0 0 2px rgba(126,240,200,.35); }
+  .btn { border:1px solid var(--line); background:var(--panel2); border-radius:9px; padding:8px 12px; font-weight:600; }
+  .btn.primary { background:var(--mint); color:var(--mint-ink); border-color:transparent; }
+  .lbl { font-size:12px; color:var(--muted); margin:0 0 8px; text-transform:uppercase; letter-spacing:.06em; }
+  .bar { height:10px; border-radius:999px; background:#06202b; overflow:hidden; border:1px solid var(--line); }
+  .bar i { display:block; height:100%; background:linear-gradient(90deg, var(--mint), #49c9d6); }
+  .earn { display:flex; justify-content:space-between; gap:8px; padding:7px 0; border-top:1px solid var(--line); }
+  .earn:first-of-type { border-top:0; }
+  .muted { color:var(--muted); font-size:12px; }
+  #toast { position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:#041a24; border:1px solid var(--line);
+           padding:10px 16px; border-radius:999px; font-weight:600; opacity:0; transition:opacity .2s; pointer-events:none; z-index:5; max-width:90vw; }
+  #toast.show { opacity:1; }
+  [hidden] { display:none !important; }
+  @media (max-width: 860px) {
+    main { grid-template-columns:minmax(0,1fr); gap:12px; padding:0 12px 16px; }
+    #stage { position:relative; top:0; height:56vh; min-height:340px; }
+    header { padding:10px 12px; }
+  }
+  @media (prefers-reduced-motion: reduce) { #toast { transition:none; } }
 </style>
 <script type="importmap">
 { "imports": {
@@ -37,33 +84,61 @@
 </script>
 </head>
 <body>
-<div id="app">
-  <div id="panel">
-    <h1>DINUMED</h1>
-    <div class="sub">Offline avatar demo · three.js r<span id="rev"></span></div>
-    <h2>Character</h2>
-    <div class="seg" id="gender">
-      <button data-g="male" class="on">Male</button>
-      <button data-g="female">Female</button>
+<header>
+  <div class="brand">DINUMED<small>Garderob · avatar kiyimlari</small></div>
+  <div class="spacer"></div>
+  <div class="chip" id="levelChip">1-daraja</div>
+  <div class="chip"><span class="coin"></span><span id="balance">0</span> DC</div>
+</header>
+<main>
+  <section id="stage" aria-label="Avatar">
+    <div id="loading">Yuklanmoqda…</div>
+    <div class="overlay">
+      <div class="seg" id="gender">
+        <button data-g="male">Erkak</button><button data-g="female">Ayol</button>
+      </div>
+      <div class="seg" id="views">
+        <button data-cam="three" class="on">To'liq</button><button data-cam="face">Yuz</button><button data-cam="back">Orqa</button>
+      </div>
     </div>
-    <h2>Clothing &amp; accessories</h2>
-    <div id="items"></div>
-    <div class="row" style="margin-top:6px">
-      <button id="all">Full outfit</button><button id="none">Base body</button>
+  </section>
+  <section id="panel">
+    <div class="tabs" id="tabs">
+      <button data-tab="shop" class="on">Garderob</button>
+      <button data-tab="look">Ko'rinish</button>
+      <button data-tab="dc">DC va daraja</button>
     </div>
-    <h2>Animation</h2>
-    <div class="row">
-      <button id="play">Pause idle</button><button id="bind">A-pose (bind)</button>
+    <div id="tab-shop"></div>
+    <div id="tab-look" hidden>
+      <div class="box"><p class="lbl">Teri rangi</p><div class="row" id="skin"></div></div>
+      <div class="box"><p class="lbl">Soch rangi</p><div class="row" id="hair"></div></div>
+      <div class="box"><p class="lbl">Harakat</p>
+        <div class="row"><button class="btn" id="play">Harakatni to'xtatish</button><button class="btn" id="bind">A-poza</button></div>
+      </div>
+      <div class="box"><p class="lbl">Kiyimlar</p>
+        <div class="row"><button class="btn" id="undress">Hammasini yechish</button></div>
+      </div>
     </div>
-    <h2>View</h2>
-    <div class="row">
-      <button data-cam="front">Front</button><button data-cam="side">Side</button>
-      <button data-cam="back">Back</button><button data-cam="face">Face</button>
+    <div id="tab-dc" hidden>
+      <div class="box">
+        <p class="lbl">Daraja</p>
+        <div style="font-size:18px;font-weight:800" id="levelTitle"></div>
+        <div class="muted" id="xpText" style="margin:4px 0 8px"></div>
+        <div class="bar"><i id="xpBar" style="width:0%"></i></div>
+      </div>
+      <div class="box">
+        <p class="lbl">DC qanday topiladi</p>
+        <div id="earn"></div>
+      </div>
+      <div class="box">
+        <p class="lbl">Sinov rejimi</p>
+        <p class="muted" style="margin:0 0 10px">Bu namoyish sahifasi. Balans va xaridlar faqat shu brauzerda saqlanadi.</p>
+        <div class="row"><button class="btn primary" id="topup">+100 DC va +150 XP</button><button class="btn" id="reset">Qaytadan boshlash</button></div>
+      </div>
     </div>
-    <div id="status">Loading…</div>
-  </div>
-  <div id="view"></div>
-</div>
+  </section>
+</main>
+<div id="toast" role="status"></div>
 <script type="module" src="./main.js"></script>
 </body>
 </html>

@@ -39,6 +39,18 @@ for (const [f, { bytes, sha }] of listed) {
   if (crypto.createHash('sha256').update(data).digest('hex') !== sha) { console.log('SHA256 MISMATCH:', f); failures++; }
 }
 
+// shop catalogue must only reference existing assets and mesh names
+const cat = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/catalog.json'), 'utf8'));
+for (const it of cat.items) {
+  const c = man.clothing.find((x) => x.id === it.asset);
+  if (!c) { console.log('CATALOG: unknown asset', it.id, it.asset); failures++; continue; }
+  const det = c.variants ? Object.values(c.variants)[0].details.male : c.details.male;
+  for (const mesh of Object.keys(it.colors || {})) {
+    if (!det.meshes.some((m) => m.name === mesh)) { console.log('CATALOG: unknown mesh', it.id, mesh); failures++; }
+  }
+}
+for (const id of [...cat.defaultOwned, ...cat.defaultWorn]) if (!cat.items.some((i) => i.id === id)) { console.log('CATALOG: unknown default', id); failures++; }
+
 for (const f of [...listed.keys()].filter((f) => f.endsWith('.glb'))) {
   const data = new Uint8Array(fs.readFileSync(path.join(ROOT, f)));
   const r = await validator.validateBytes(data, { uri: f, maxIssues: 50 });

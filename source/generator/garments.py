@@ -91,11 +91,15 @@ def scrub_offset(b):
 
 def coat_offset(b):
     so = scrub_offset(b)
+    segs = [(_mir(b.S, s), _mir(b.W, s)) for s in ("Left", "Right")]
+    def seg_dist(P, a, c):
+        ac = c - a
+        t = np.clip(((P - a) @ ac) / (ac @ ac), 0.12, 1.3)      # start a little below the shoulder
+        return np.linalg.norm(P - (a + t[:, None] * ac), axis=1)
     def o(P):
         torso = so(P) + (0.016 if not b.F else 0.013)
-        armw = smoothstep(np.abs(P[:, 0]), 0.20, 0.27)
-        # do not loosen the skirt (it has its own shape)
-        armw = armw * smoothstep(P[:, 1], 0.95 * b.sy, 1.05 * b.sy)
+        d = np.minimum(seg_dist(P, *segs[0]), seg_dist(P, *segs[1]))
+        armw = 1 - smoothstep(d, 0.075, 0.125)                 # sleeves: fixed ease around the arm
         return torso * (1 - armw) + (0.021 if not b.F else 0.018) * armw
     return o
 
@@ -232,7 +236,7 @@ class Garment:
         self.name, self.title, self.layer, self.meshes, self.notes = name, title, layer, meshes, notes
 
 
-def scrubs_top(ctx, log):
+def scrubs_top(ctx, log, mesh=True):
     b = ctx.body
     Y = lambda v: v * b.sy
     base = Union([b.no_head, chest_filler(b)], k=0.02)
@@ -242,6 +246,9 @@ def scrubs_top(ctx, log):
     reg = Intersect([HalfSpace((0, -1, 0), -Y(0.86)), Complement(cuts)])
     field = Intersect([off, reg], name="scrubs_top")
     off.name = "scrubs_top"
+    ctx.scrub_solid = field
+    if not mesh:
+        return None, field
     m = extract(off, (-0.5, Y(0.84), -0.22), (0.5, Y(1.58), 0.24), 0.0028,
                 6000 if ctx.fast else 14000, clip=reg, log=log)
     ctx.scrub_solid = field
@@ -260,7 +267,7 @@ def trousers(ctx, log):
     return m, field
 
 
-def white_coat(ctx, log):
+def white_coat(ctx, log, mesh=True):
     b = ctx.body
     Y = lambda v: v * b.sy
     base = Union([b.no_head, chest_filler(b), skirt(b)], k=0.04)
@@ -295,6 +302,9 @@ def white_coat(ctx, log):
     hem = Y(0.47)
     reg = Intersect([HalfSpace((0, -1, 0), -hem), Complement(cuts)])
     field = Intersect([solid, reg], name="white_coat")
+    ctx.coat_solid = field
+    if not mesh:
+        return None, None, field
     m = extract(solid, (-0.66, hem - 0.02, -0.26), (0.66, Y(1.60), 0.28), 0.0028,
                 9000 if ctx.fast else 24000, clip=reg, log=log)
     ctx.coat_solid = field
@@ -321,7 +331,15 @@ def shoes(ctx, log):
     sole = Func(sole_f, lo=(-0.2, -0.02, -0.12), hi=(0.2, 0.01, 0.24), name="sole")
     upper = Offset(feet, 0.0055)
     base = Union([upper, sole], k=0.008, name="shoes")
-    reg = HalfSpace((0, 1, 0), ytop)
+    holes = []
+    fl = 0.9 if b.F else 1.0
+    for s in ("Left", "Right"):
+        A = _mir(b.A, s)
+        for dx in (-0.013, 0.001, 0.015):
+            for z in (0.070, 0.095, 0.120):
+                x = A[0] + (dx if s == "Left" else -dx)
+                holes.append(RoundCone((x, 0.040, z * fl), (x, 0.13, z * fl), 0.0045, 0.0045))
+    reg = Intersect([HalfSpace((0, 1, 0), ytop), Complement(Union(holes))])
     field = Intersect([base, reg], name="shoes")
     m = extract(base, (-0.2, -0.03, -0.12), (0.2, ytop + 0.01, 0.24), 0.0022,
                 5000 if ctx.fast else 12000, clip=reg, log=log)
@@ -332,19 +350,19 @@ def shoes(ctx, log):
 def medical_cap(ctx, log):
     b = ctx.body
     hs, H0 = b.hs, b.head_c
-    base = Union([b.head_only, ctx.hair_field], k=0.006)
-    o = 0.0032
+    base = Union([b.head_only, ctx.hair_shell], k=0.006)
+    o = 0.0028
     off = Offset(base, o, name="medical_cap")
     # cap edge height (relative to head centre) by azimuth: forehead, above ears, behind ears, nape
     ang = np.radians([0, 90, 128, 180])
-    hgt = np.array([0.060, 0.036, 0.033, -0.050]) if not b.F else np.array([0.058, 0.036, 0.032, -0.065])
+    hgt = np.array([0.052, 0.036, 0.033, -0.050]) if not b.F else np.array([0.050, 0.034, 0.030, -0.065])
     def edge(P):
         q = P - H0
         th = np.abs(np.arctan2(q[:, 0], q[:, 2]))
         return np.interp(th, ang, hgt) * hs - q[:, 1]
     reg = Func(edge)
     field = Intersect([off, reg], name="medical_cap")
-    m = extract(off, H0 - 0.17, H0 + 0.17, 0.0018, 3000 if ctx.fast else 7000, clip=reg, log=log)
+    m = extract(off, H0 - 0.22, H0 + np.array([0.22, 0.28, 0.22]), 0.0020, 3000 if ctx.fast else 8000, clip=reg, log=log)
     return m, field
 
 
@@ -352,12 +370,12 @@ def glasses(ctx, log):
     b = ctx.body
     hs, P = b.hs, b.Hpt
     support = Union([b.head_only, ctx.hair_field])
-    r_frame = 0.0021
-    lens_w, lens_h = 0.025 * hs, 0.0165 * hs
+    r_frame = 0.0030
+    lens_w, lens_h = 0.0265 * hs, 0.0200 * hs
     frame_paths, lenses = [], []
-    zc = 0.1035
+    zc = 0.0935
     for s in (1, -1):
-        c = P(0.0335 * s, 0.002, zc)
+        c = P(0.0345 * s, 0.001, zc)
         ang = np.linspace(0, 2 * np.pi, 48, endpoint=False)
         e = 2.6
         x = np.sign(np.cos(ang)) * np.abs(np.cos(ang)) ** (2 / e) * lens_w
@@ -401,17 +419,28 @@ def glasses(ctx, log):
         loop = frame_paths[k]
         hinge = loop[np.argmax(loop[:, 0] * s)]
         ear = b.ear_prims[0 if s > 0 else 1]
-        ear_top = ray_surface(b.head_only, ear.c + np.array([0.004 * s, 0.06, -0.004]), (0, -1, 0))
-        pts = [hinge, hinge + np.array([0.008 * s, 0.002, -0.012]), P(0.083 * s, 0.012, 0.045),
-               P(0.084 * s, 0.016, 0.005), ear_top + np.array([0, 0.0015, 0.004]),
-               ear_top + np.array([-0.002 * s, -0.002, -0.011]), ear_top + np.array([-0.004 * s, -0.009, -0.016])]
+        ear_top = ray_surface(b.head_only, ear.c + np.array([0.0012 * s, 0.06, -0.004]), (0, -1, 0))   # just outside the skull
+        pts = [hinge, hinge + np.array([0.008 * s, 0.002, -0.012]), P(0.0895 * s, 0.012, 0.040),
+               P(0.0865 * s, 0.013, 0.006), ear_top + np.array([0, 0.0015, 0.004]),
+               ear_top + np.array([0.0, 0.0, -0.004])]            # ends on top of the ear
         path = catmull(pts, 10)
+        rt = r_frame * (1.0 - 0.42 * smoothstep(np.linspace(0, 1, len(path)), 0.25, 0.75))   # thinner at the ear
         path = push_out(support, path, r_frame + 0.0006)
         # make the segment over the ear rest on it (contact)
-        tail = np.arange(len(path)) >= len(path) * 0.55
-        path[tail] = onto(support, path[tail], r_frame + 0.0004)
-        path = push_out(support, path, r_frame + 0.0003)
-        parts.append(tube(path, r_frame, seg=8))
+        tail = np.arange(len(path)) >= len(path) * 0.72
+        for i in np.where(tail)[0]:             # drop the back part onto the ear / head from above
+            path[i] = ray_surface(b.head_only, (path[i][0], ear_top[1] + 0.03, path[i][2]), (0, -1, 0),
+                                  target=rt[i] + 0.0004, tmax=0.2)
+        path[:, 1] = smooth_path(path, 2, 0.5, fixed=(0, len(path) - 1))[:, 1]
+        f_ = b.head_only(path)
+        bad = f_ < rt + 0.0004
+        if bad.any():
+            path[bad, 1] += (rt[bad] + 0.0004 - f_[bad]) * 1.5
+        f_ = support(path)
+        bad = f_ < rt + 0.0003
+        if bad.any():
+            path[bad] += normals(support, path[bad]) * (rt[bad] + 0.0003 - f_[bad])[:, None]
+        parts.append(tube(path, rt, seg=8))
     frame_m = merge(parts)
     lens_m = merge(lenses)
     return frame_m, lens_m, merge(pads)
@@ -435,8 +464,11 @@ def stethoscope(ctx, log, support, variant):
         x, z = np.cos(th) * ring_r, -0.02 - np.sin(th) * ring_r * 0.95
         ring.append(ray_surface(support, (x, y_start, z), (0, -1, 0), target=tgt))
     ring = ring[::-1]                                      # start on the character's right
-    guide = [front_pt(-0.060, yb + 0.03), front_pt(-0.072, Y(1.25)), front_pt(-0.090, Y(1.37)), front_pt(-0.102, Y(1.43))] + ring + \
-            [front_pt(0.102, Y(1.43)), front_pt(0.090, Y(1.37)), front_pt(0.072, Y(1.25)), front_pt(0.060, yb)]
+    gx = (0.058, 0.066, 0.082, 0.096) if not b.F else (0.054, 0.060, 0.076, 0.094)
+    if b.F and variant == "over_scrubs":      # narrow shoulders: keep clear of the backpack straps
+        gx = (0.054, 0.060, 0.074, 0.082)
+    guide = [front_pt(-gx[0], yb + 0.03), front_pt(-gx[1], Y(1.25)), front_pt(-gx[2], Y(1.37)), front_pt(-gx[3], Y(1.43))] + ring + \
+            [front_pt(gx[3], Y(1.43)), front_pt(gx[2], Y(1.37)), front_pt(gx[1], Y(1.25)), front_pt(gx[0], yb)]
     path = catmull(guide, 14)
     path = resample(path, 0.006)
     for _ in range(6):
@@ -487,8 +519,8 @@ def id_card(ctx, log, support, variant):
     Y = lambda v: v * b.sy
     w, hgt, th = 0.054, 0.086, 0.0009
     # clipped to the breast pocket's upper edge, hanging over it
-    x0 = 0.100
-    y0 = Y(1.255) + 0.004 if not b.F else Y(1.33) + 0.004
+    x0 = 0.108 if not b.F else 0.106
+    y0 = Y(1.255) + 0.004 if not b.F else Y(1.30)
     c = ray_surface(support, (x0, y0, 0.4), (0, 0, -1))
     samples = []
     for dx in (-w / 2, 0, w / 2):
@@ -582,6 +614,165 @@ def watch(ctx, log):
     return band, case, dial
 
 
+
+def sneakers(ctx, log):
+    """Comfortable sneakers: low upper, thick white sole, laces."""
+    b = ctx.body
+    feet = b.feet_field
+    ytop = 0.082
+    upper = Offset(feet, 0.0048, name="sneaker_upper")
+    def sole_f(P):
+        Q = P.copy(); Q[:, 1] = 0.012
+        foot2d = feet(Q) - 0.0100
+        slab = np.abs(P[:, 1] + 0.0030) - 0.0150
+        r = 0.006
+        a, b_ = foot2d + r, slab + r
+        cup = np.sqrt(np.maximum(a, 0) ** 2 + np.maximum(b_, 0) ** 2) + np.minimum(np.maximum(a, b_), 0) - r
+        # cup sole: hollowed by the upper, so nothing lies inside the foot
+        return np.maximum(cup, -(feet(P) - 0.0054))
+    sole = Func(sole_f, lo=(-0.2, -0.025, -0.12), hi=(0.2, 0.02, 0.24), name="sneaker_sole")
+    reg = Intersect([HalfSpace((0, 1, 0), ytop), HalfSpace((0, -1, 0), -0.004)])
+    up_m = extract(upper, (-0.2, -0.01, -0.12), (0.2, ytop + 0.01, 0.24), 0.0021,
+                   4000 if ctx.fast else 10000, clip=reg, log=log)
+    sole_m = extract(sole, (-0.2, -0.03, -0.12), (0.2, 0.03, 0.24), 0.0016,
+                     2500 if ctx.fast else 7000, log=log)
+    laces = []
+    fl = 0.9 if b.F else 1.0
+    for s in ("Left", "Right"):
+        A = _mir(b.A, s)
+        sx = 1 if s == "Left" else -1
+        for z in np.linspace(0.010, 0.085, 5) * fl:
+            pts = []
+            for dx in np.linspace(-0.013, 0.013, 7):
+                x = A[0] + sx * 0.004 + dx
+                pts.append(ray_surface(upper, (x, 0.2, z), (0, -1, 0), target=0.0016))
+            pts = np.array(pts)
+            laces.append(tube(pts, 0.0014, seg=6))
+    ctx.sneaker_sole_bottom = float(sole_m.P[:, 1].min())
+    field = Union([Intersect([upper, reg]), sole])
+    return up_m, sole_m, merge(laces), field
+
+
+def medical_mask(ctx, log):
+    """Pleated surgical mask with ear loops (rigid on the head)."""
+    b = ctx.body
+    hs, H0, P = b.hs, b.head_c, b.Hpt
+    dome = Ellipsoid(P(0, -0.052, 0.046), np.array([0.056, 0.050, 0.040]) * hs)
+    base = Union([b.head_only, dome], k=0.02)
+    pleat = lambda Q: 0.0030 + 0.0009 * (1 + np.sin((Q[:, 1] - H0[1]) * 2 * np.pi / (0.013 * hs)))
+    off = Offset(base, pleat, omax=0.005, name="medical_mask")
+    top, bot = H0[1] - 0.019 * hs, H0[1] - 0.101 * hs
+    zc = H0[2] + 0.012 * hs
+    def reg_f(Q):
+        return np.maximum(np.maximum(Q[:, 1] - top, bot - Q[:, 1]), zc - Q[:, 2])
+    reg = Func(reg_f)
+    m = extract(off, H0 - 0.17, H0 + 0.17, 0.0012, 2500 if ctx.fast else 5000, clip=reg, log=log)
+    # ear loops: from the mask's side corners around the back of each ear
+    support = Union([b.head_only, ctx.hair_field])
+    loops = []
+    for k, s in enumerate((1, -1)):
+        side = m.P[(m.P[:, 0] * s) > 0]
+        up_c = side[np.argmax(side[:, 0] * s - 2.0 * np.abs(side[:, 1] - (top - 0.004 * hs)))]
+        lo_c = side[np.argmax(side[:, 0] * s - 2.0 * np.abs(side[:, 1] - (bot + 0.012 * hs)))]
+        ear = b.ear_prims[0 if s > 0 else 1]
+        e = ear.c
+        # around the ear: along its outer face below the glasses temple, over the ridge behind
+        # where a temple ends, down the back and under the lobe
+        pts = [up_c, e + np.array([0.0060 * s, -0.004, 0.016]) * hs, e + np.array([0.0068 * s, 0.004, 0.000]) * hs,
+               e + np.array([0.0020 * s, 0.0165, -0.012]) * hs, e + np.array([-0.001 * s, 0.004, -0.0185]) * hs,
+               e + np.array([0.000 * s, -0.012, -0.0175]) * hs, e + np.array([0.002 * s, -0.0245, -0.004]) * hs,
+               e + np.array([0.003 * s, -0.018, 0.014]) * hs, lo_c]
+        path = resample(catmull(pts, 10), 0.003)
+        path = push_out(support, path, 0.0012 + 0.0006)
+        path[1:-1] = onto(support, path[1:-1], 0.0012 + 0.0005)       # loops rest on the skin
+        path = push_out(support, path, 0.0012 + 0.0004)
+        loops.append(tube(path, 0.0012, seg=6))
+    return m, merge(loops)
+
+
+def backpack(ctx, log, support, variant):
+    """Backpack resting on the back, with two shoulder straps."""
+    b = ctx.body
+    Y = lambda v: v * b.sy
+    yc = Y(1.20)
+    back_pt = ray_surface(support, (0, yc, -0.6), (0, 0, 1))
+    half = np.array([0.130, 0.180, 0.050]) * (0.94 if b.F else 1.0)
+    cz = back_pt[2] - half[2] - 0.004
+    def body_field(shift):
+        c = np.array([0, yc, cz + shift])
+        main = RoundBox(c, half, 0.040)
+        pocket = RoundBox(c + np.array([0, -0.065, -half[2] - 0.012]), (0.090, 0.075, 0.020), 0.018)
+        return Union([main, pocket], k=0.010, name="backpack"), c
+    # slide the bag towards the body until it rests on it (1 mm clearance)
+    fld, c = body_field(0.0)
+    m = extract(fld, c - 0.3, c + 0.3, 0.0025, 2500 if ctx.fast else 5000, log=log)
+    gap = support(m.P).min() - 0.001
+    m.P[:, 2] += gap
+    c = c + np.array([0, 0, gap])
+    front_z = c[2] + half[2]
+    # handle
+    handle = tube(catmull([c + [-0.035, half[1] + 0.002, 0.0], c + [0, half[1] + 0.028, 0.0], c + [0.035, half[1] + 0.002, 0.0]], 8),
+                  0.006, seg=8)
+    # straps
+    tgt = 0.0035 + 0.0020
+    straps = []
+    for s in (1, -1):
+        def sp(x, y, z0, d):
+            return ray_surface(support, (x, y, z0), d, target=tgt)
+        p0 = np.array([0.072 * s, c[1] + half[1] - 0.03, front_z - 0.012])
+        f = (b.S[0] / 0.178 + 1) / 2                        # shoulder-width factor
+        sh_back = sp(0.146 * s * f, Y(1.75), -0.055, (0, -1, 0))
+        sh_top = sp(0.156 * s * f, Y(1.75), -0.005, (0, -1, 0))
+        def diag(y, az):                                   # ray towards the body axis from azimuth az (deg from front)
+            a_ = np.radians(az)
+            return sp(0.6 * np.sin(a_) * s, y, -0.01 + 0.6 * np.cos(a_), (-np.sin(a_) * s, 0, -np.cos(a_)))
+        sh_front = diag(Y(1.40), 62)
+        chest = diag(Y(1.30), 72)
+        low = diag(Y(1.19), 78)
+        side = sp(0.45 * s, Y(1.17), -0.45, (-0.85 * s, 0, 1))         # behind the armpit (misses the arm)
+        p1 = np.array([0.105 * s, c[1] - half[1] + 0.04, front_z - 0.012])
+        sh_edge = sp(0.152 * s * f, Y(1.75), 0.018, (0, -1, 0))          # front edge of the shoulder
+        path = resample(catmull([p0, sh_back, sh_top, sh_edge, sh_front, chest, low, side, p1], 12), 0.006)
+        inner = np.arange(len(path))
+        mid = (inner > 2) & (inner < len(path) - 3)
+        for _ in range(3):
+            path[mid] = onto(support, path[mid], tgt, iters=2)
+            path = smooth_path(path, 3, 0.5, fixed=(0, len(path) - 1))
+        path[mid] = push_out(support, path[mid], tgt)
+        n = normals(support, path)
+        T = np.gradient(path, axis=0); T /= np.linalg.norm(T, axis=1, keepdims=True)
+        n = n - T * np.einsum("ij,ij->i", n, T)[:, None]; n /= np.linalg.norm(n, axis=1, keepdims=True)
+        B = np.cross(T, n)
+        w, t = 0.016, 0.0035
+        Pn, Fn = [], []
+        for i in range(len(path)):
+            for (a, bb) in ((1, 1), (1, -1), (-1, -1), (-1, 1)):
+                Pn.append(path[i] + n[i] * a * t + B[i] * bb * w)
+        for i in range(len(path) - 1):
+            for k in range(4):
+                k2 = (k + 1) % 4
+                a0, a1, b1, b0 = i * 4 + k, i * 4 + k2, (i + 1) * 4 + k2, (i + 1) * 4 + k
+                Fn += [[a0, a1, b1], [a0, b1, b0]]
+        for end, flip in ((0, True), (len(path) - 1, False)):
+            q = [end * 4 + k for k in range(4)]
+            Fn += [[q[0], q[2], q[1]], [q[0], q[3], q[2]]] if flip else [[q[0], q[1], q[2]], [q[0], q[2], q[3]]]
+        sm = Mesh(np.array(Pn), np.array(Fn), None)
+        cen = sm.P[sm.F].mean(1)
+        ring_c = path[np.minimum(sm.F[:, 0] // 4, len(path) - 1)]
+        if np.mean(np.einsum("ij,ij->i", face_normals(sm.P, sm.F), cen - ring_c)) < 0:
+            sm.F = sm.F[:, ::-1]                               # outward winding
+        sm.N = vertex_normals(sm.P, sm.F)
+        straps.append(sm)
+    strap_m = merge(straps)
+    # make every strap vertex clear the support by at least 0.6 mm
+    f = support(strap_m.P)
+    if f.min() < 0.0015:
+        bad = f < 0.0015
+        strap_m.P[bad] += normals(support, strap_m.P[bad]) * (0.0015 - f[bad])[:, None]
+    strap_m.N = vertex_normals(strap_m.P, strap_m.F)
+    return m, handle, strap_m
+
+
 def grid_box(c, half, R, nx=10, ny=16):
     """Thin box whose two large faces are subdivided grids (front face has UVs 0..1)."""
     P, N, UV, F = [], [], [], []
@@ -656,30 +847,41 @@ def build_all(ctx, out_dir, copyright, log):
     b = ctx.body
     g = ctx.gender
     log(f"== clothing: {g}")
-    info = {}
+    only = getattr(ctx, "only", None)
+    want = lambda name: only is None or name in only
+    fit_path = os.path.join(out_dir, "clothing", g, "_fit.json")
+    fit = json.load(open(fit_path)) if os.path.exists(fit_path) else {}
+    go = dict(fit.get("groundOffset", {}))
     # scrubs top / trousers / coat
-    top, top_field = scrubs_top(ctx, log)
-    _write(ctx, out_dir, copyright, "scrubs_top",
-           [("ScrubsTop", top, _tw(ctx, top), dict(color=rgba(TEAL), roughness=0.85, double_sided=True))])
-    tr, tr_field = trousers(ctx, log)
-    _write(ctx, out_dir, copyright, "medical_trousers",
-           [("MedicalTrousers", tr, _tw(ctx, tr), dict(color=rgba(TEAL), roughness=0.85, double_sided=True))])
-    coat, buttons, coat_field = white_coat(ctx, log)
-    _write(ctx, out_dir, copyright, "white_coat",
-           [("WhiteCoat", coat, _tw(ctx, coat, k=16, sigma=0.03), dict(color=rgba(WHITE), roughness=0.8, double_sided=True)),
-            ("CoatButtons", buttons, _tw(ctx, buttons), dict(color=rgba((225, 225, 222)), roughness=0.35))])
-    sh, sh_field = shoes(ctx, log)
-    _write(ctx, out_dir, copyright, "medical_shoes",
-           [("MedicalShoes", sh, _tw(ctx, sh, k=6, sigma=0.01), dict(color=rgba((240, 240, 240)), roughness=0.45, double_sided=True))])
-    cap, cap_field = medical_cap(ctx, log)
-    _write(ctx, out_dir, copyright, "medical_cap",
-           [("MedicalCap", cap, rigid(len(cap.P), "Head"), dict(color=rgba(CAP), roughness=0.85, double_sided=True))])
-    fr, lens, pads = glasses(ctx, log)
-    _write(ctx, out_dir, copyright, "glasses",
-           [("GlassesFrame", fr, rigid(len(fr.P), "Head"), dict(color=rgba((28, 28, 32)), roughness=0.35)),
-            ("GlassesLenses", lens, rigid(len(lens.P), "Head"),
-             dict(color=rgba((225, 238, 255), 0.18), roughness=0.05, alpha="BLEND", double_sided=True)),
-            ("GlassesNosePads", pads, rigid(len(pads.P), "Head"), dict(color=rgba((235, 238, 240), 0.55), roughness=0.3, alpha="BLEND"))])
+    top, top_field = scrubs_top(ctx, log, mesh=want("scrubs_top"))
+    if want("scrubs_top"):
+        _write(ctx, out_dir, copyright, "scrubs_top",
+               [("ScrubsTop", top, _tw(ctx, top), dict(color=rgba(TEAL), roughness=0.85, double_sided=True))])
+    if want("medical_trousers"):
+        tr, tr_field = trousers(ctx, log)
+        _write(ctx, out_dir, copyright, "medical_trousers",
+               [("MedicalTrousers", tr, _tw(ctx, tr), dict(color=rgba(TEAL), roughness=0.85, double_sided=True))])
+    coat, buttons, coat_field = white_coat(ctx, log, mesh=want("white_coat"))
+    if want("white_coat"):
+        _write(ctx, out_dir, copyright, "white_coat",
+               [("WhiteCoat", coat, _tw(ctx, coat, k=16, sigma=0.03), dict(color=rgba(WHITE), roughness=0.8, double_sided=True)),
+                ("CoatButtons", buttons, _tw(ctx, buttons), dict(color=rgba((225, 225, 222)), roughness=0.35))])
+    if want("medical_shoes"):
+        sh, sh_field = shoes(ctx, log)
+        go["medical_shoes"] = round(-ctx.sole_bottom, 4)
+        _write(ctx, out_dir, copyright, "medical_shoes",
+               [("MedicalShoes", sh, _tw(ctx, sh, k=6, sigma=0.01), dict(color=rgba((240, 240, 240)), roughness=0.45, double_sided=True))])
+    if want("medical_cap"):
+        cap, cap_field = medical_cap(ctx, log)
+        _write(ctx, out_dir, copyright, "medical_cap",
+               [("MedicalCap", cap, rigid(len(cap.P), "Head"), dict(color=rgba(CAP), roughness=0.85, double_sided=True))])
+    if want("glasses"):
+        fr, lens, pads = glasses(ctx, log)
+        _write(ctx, out_dir, copyright, "glasses",
+               [("GlassesFrame", fr, rigid(len(fr.P), "Head"), dict(color=rgba((34, 38, 48)), roughness=0.35)),
+                ("GlassesLenses", lens, rigid(len(lens.P), "Head"),
+                 dict(color=rgba((225, 238, 255), 0.16), roughness=0.05, alpha="BLEND", double_sided=True)),
+                ("GlassesNosePads", pads, rigid(len(pads.P), "Head"), dict(color=rgba((235, 238, 240), 0.55), roughness=0.3, alpha="BLEND"))])
     # supports for the accessories that sit on clothing
     scrub_support = Union([top_field, Offset(b.field, 0.0015)])
     coat_support = Union([coat_field, top_field, Offset(b.field, 0.0015)])
@@ -687,25 +889,50 @@ def build_all(ctx, out_dir, copyright, log):
     card_png = tx.png_bytes(tx.id_card(g))
     open(os.path.join(out_dir, "textures", f"id_card_{g}.png"), "wb").write(card_png)
     for variant, sup in ctx.supports.items():
-        tubing, metal, tips = stethoscope(ctx, log, sup, variant)
-        _write(ctx, out_dir, copyright, f"stethoscope_{variant}",
+        if not (want("stethoscope") or want("id_card")):
+            break
+        if want("stethoscope"):
+          tubing, metal, tips = stethoscope(ctx, log, sup, variant)
+          _write(ctx, out_dir, copyright, f"stethoscope_{variant}",
                [("StethoscopeTubing", tubing, _tw(ctx, tubing, k=12, sigma=0.03), dict(color=rgba((22, 22, 26)), roughness=0.45)),
                 ("StethoscopeMetal", metal, _tw(ctx, metal, k=12, sigma=0.03), dict(color=rgba((205, 207, 212)), metallic=1.0, roughness=0.22)),
                 ("StethoscopeEartips", tips, _tw(ctx, tips, k=12, sigma=0.03), dict(color=rgba((30, 30, 34)), roughness=0.6))])
-        card, clip = id_card(ctx, log, sup, variant)
-        _write(ctx, out_dir, copyright, f"id_card_{variant}",
+        if want("id_card"):
+          card, clip = id_card(ctx, log, sup, variant)
+          _write(ctx, out_dir, copyright, f"id_card_{variant}",
                [("IDCard", card, rigid(len(card.P), "Spine2"),
                  dict(color=[1, 1, 1, 1], roughness=0.35, texture_png=(f"id_card_{g}", card_png))),
                 ("IDCardClip", clip, rigid(len(clip.P), "Spine2"), dict(color=rgba((190, 192, 196)), metallic=1.0, roughness=0.3))])
-    band, case, dial = watch(ctx, log)
-    face_png = tx.png_bytes(tx.watch_face())
-    open(os.path.join(out_dir, "textures", "watch_face.png"), "wb").write(face_png)
-    _write(ctx, out_dir, copyright, "watch",
-           [("WatchStrap", band, rigid(len(band.P), "LeftForeArm"), dict(color=rgba((20, 20, 22)), roughness=0.6)),
-            ("WatchCase", case, rigid(len(case.P), "LeftForeArm"), dict(color=rgba((200, 202, 206)), metallic=1.0, roughness=0.2)),
-            ("WatchDial", dial, rigid(len(dial.P), "LeftForeArm"),
-             dict(color=[1, 1, 1, 1], roughness=0.3, texture_png=("watch_face", face_png)))])
-    ctx.ground_offset = -ctx.sole_bottom
-    meta = {"gender": g, "shoeGroundOffset": round(-ctx.sole_bottom, 4)}
+    if want("watch"):
+        band, case, dial = watch(ctx, log)
+        face_png = tx.png_bytes(tx.watch_face())
+        open(os.path.join(out_dir, "textures", "watch_face.png"), "wb").write(face_png)
+        _write(ctx, out_dir, copyright, "watch",
+               [("WatchStrap", band, rigid(len(band.P), "LeftForeArm"), dict(color=rgba((20, 20, 22)), roughness=0.6)),
+                ("WatchCase", case, rigid(len(case.P), "LeftForeArm"), dict(color=rgba((200, 202, 206)), metallic=1.0, roughness=0.2)),
+                ("WatchDial", dial, rigid(len(dial.P), "LeftForeArm"),
+                 dict(color=[1, 1, 1, 1], roughness=0.3, texture_png=("watch_face", face_png)))])
+    if want("sneakers"):
+        up, sole, laces, sn_field = sneakers(ctx, log)
+        go["sneakers"] = round(-ctx.sneaker_sole_bottom, 4)
+        _write(ctx, out_dir, copyright, "sneakers",
+               [("SneakerUpper", up, _tw(ctx, up, k=6, sigma=0.01), dict(color=rgba((56, 66, 96)), roughness=0.7, double_sided=True)),
+                ("SneakerSole", sole, _tw(ctx, sole, k=6, sigma=0.01), dict(color=rgba((242, 242, 240)), roughness=0.5)),
+                ("SneakerLaces", laces, _tw(ctx, laces, k=6, sigma=0.01), dict(color=rgba((245, 245, 245)), roughness=0.8))])
+    if want("medical_mask"):
+        mask, loops = medical_mask(ctx, log)
+        _write(ctx, out_dir, copyright, "medical_mask",
+               [("MedicalMask", mask, rigid(len(mask.P), "Head"), dict(color=rgba((150, 196, 232)), roughness=0.9, double_sided=True)),
+                ("MaskEarLoops", loops, rigid(len(loops.P), "Head"), dict(color=rgba((240, 242, 245)), roughness=0.8))])
+    for variant, sup in ctx.supports.items():
+        if not want("backpack"):
+            break
+        bag, handle, straps = backpack(ctx, log, sup, variant)
+        _write(ctx, out_dir, copyright, f"backpack_{variant}",
+               [("Backpack", bag, rigid(len(bag.P), "Spine2"), dict(color=rgba((62, 92, 104)), roughness=0.75)),
+                ("BackpackHandle", handle, rigid(len(handle.P), "Spine2"), dict(color=rgba((36, 40, 48)), roughness=0.6)),
+                ("BackpackStraps", straps, _tw(ctx, straps, k=12, sigma=0.03), dict(color=rgba((36, 40, 48)), roughness=0.7, double_sided=True))])
+    meta = {"gender": g, "heightMetres": round(float(b.height), 3),
+            "groundOffset": go, "shoeGroundOffset": go.get("medical_shoes", 0)}
     with open(os.path.join(out_dir, "clothing", g, "_fit.json"), "w") as f:
         json.dump(meta, f, indent=2)

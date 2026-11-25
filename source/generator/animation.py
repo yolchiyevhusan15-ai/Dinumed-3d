@@ -1,6 +1,7 @@
 """Procedural looping idle animation (rotation tracks only, so the same clip
 drives both the male and female skeleton)."""
 import numpy as np
+from body import ARM_DOWN_DEG
 
 DURATION = 8.0
 FPS = 30
@@ -36,13 +37,13 @@ def idle():
     tr["Spine2"] = qmul(quat_axis_angle(X, deg(-1.2) * breathe), quat_axis_angle(Z, deg(-0.4) * sway))
     tr["Neck"] = quat_axis_angle(X, deg(1.0) * breathe)
     tr["Head"] = qmul(quat_axis_angle(Y, deg(4.0) * np.sin(w8 + 1.3)), quat_axis_angle(X, deg(1.5) * np.sin(w8 * 2 + 0.4)))
-    # arms: lowered from the A-pose (rest 45 deg) to a relaxed hang, gentle sway
-    lower = deg(12)
+    # arms: lowered a little from the A-pose to a relaxed hang, gentle sway
+    lower = deg(8)
     for side, s in (("Left", 1), ("Right", -1)):
         tr[f"{side}Shoulder"] = quat_axis_angle(Z, s * deg(-0.8) * breathe)
-        tr[f"{side}Arm"] = qmul(quat_axis_angle(Z, -s * (lower + deg(1.2) * np.sin(w8 + (0 if s > 0 else 0.8)))),
-                                quat_axis_angle(X, deg(2.0) * np.sin(w8 + (0.3 if s > 0 else 1.1))))
-        d = np.array([s * np.cos(deg(45)), -np.sin(deg(45)), 0.0])
+        tr[f"{side}Arm"] = qmul(quat_axis_angle(Z, -s * (lower + deg(0.8) * np.sin(w8 + (0 if s > 0 else 0.8)))),
+                                quat_axis_angle(X, deg(1.5) * np.sin(w8 + (0.3 if s > 0 else 1.1))))
+        d = np.array([s * np.cos(deg(ARM_DOWN_DEG)), -np.sin(deg(ARM_DOWN_DEG)), 0.0])
         elbow_axis = np.cross(d, (0, 0, 1))
         tr[f"{side}ForeArm"] = quat_axis_angle(elbow_axis, deg(4.0) + deg(1.0) * np.sin(w8 + 0.5))
         hq = tr["Hips"].copy()

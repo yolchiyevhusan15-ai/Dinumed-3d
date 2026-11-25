@@ -1,13 +1,14 @@
 """Procedural anatomy: skeleton + SDF body description for male / female.
 
 Coordinate system (glTF): +Y up, character faces +Z, character's LEFT is +X.
-Units: metres.  Bind pose: A-pose (arms 45 deg below horizontal).
+Units: metres.  Bind pose: A-pose (arms ARM_DOWN_DEG below horizontal).
 """
 import numpy as np
 from sdf import (Ellipsoid, Sphere, RoundCone, RoundBox, HalfSpace, Union,
                  Subtract, Intersect, Complement, rot_from_axes)
 
 FINGERS = ["Thumb", "Index", "Middle", "Ring", "Pinky"]
+ARM_DOWN_DEG = 55          # A-pose: arms this many degrees below horizontal
 
 # Canonical joint order shared by EVERY asset (characters and clothing).
 def bone_names():
@@ -55,7 +56,9 @@ class Body:
         m = lambda a, b: b if F else a       # male value, female value
         sy = m(1.0, 0.935)
         Y = lambda v: v * sy
-        self.height = m(1.78, 1.665)
+        # stylised ("cartoon") proportions: larger head sitting on the same body
+        self.hs_style = m(1.36, 1.30)
+        self.height = Y(1.555) + 0.218 * self.hs_style
         J = {}
         # ------------------------------------------------------------ skeleton
         J["Hips"] = (0, Y(0.97), 0.0)
@@ -66,7 +69,7 @@ class Body:
         J["Head"] = (0, Y(1.605), -0.005)
         J["HeadTop_End"] = (0, self.height, -0.005)
         shx = m(0.178, 0.152)
-        arm_ang = np.radians(45)
+        arm_ang = np.radians(ARM_DOWN_DEG)
         self.arm_dir = d = np.array([np.cos(arm_ang), -np.sin(arm_ang), 0.0])
         self.palm_n = pn = np.array([-np.sin(arm_ang), -np.cos(arm_ang), 0.0])  # palm faces down/in
         self.hand_w = hw = np.array([0, 0, 1.0])                                   # thumb side
@@ -258,53 +261,59 @@ class Body:
         return Union([Union(prims[:8], k=0.03), Union(prims[8:], k=0.02)], k=0.025, name=f"leg{side[0]}")
 
     def _head(self, m, Y):
-        hs = m(1.0, 0.96)
-        nz = m(1.0, 0.88)
-        jw = m(1.0, 0.90)
-        H0 = np.array([0, self.height - 0.107 * hs, 0.0])
+        """Stylised cartoon head: one smooth egg shape, large eyes, small round
+        nose, round ears.  The mouth is a separate layered mesh (see build.py)."""
+        hs = self.hs_style
+        nz = m(1.0, 0.86)
+        jw = m(1.0, 0.94)
+        H0 = np.array([0, Y(1.555) + 0.111 * hs, 0.0])
         self.head_c = H0
         P = lambda x, y, z: H0 + np.array([x, y, z]) * hs
-        prims = [
-            Ellipsoid(P(0, 0.010, -0.012), np.array([0.077, 0.097, 0.099]) * hs, bone="Head"),          # cranium
-            Ellipsoid(P(0, -0.040, 0.011), np.array([0.062, 0.073, 0.076]) * hs * np.array([m(1, 0.95), 1, 1]), bone="Head"),  # face
-            RoundCone(P(0.056 * jw, -0.030, -0.012), P(0.023 * jw, -0.100, 0.055), 0.022 * hs * jw, 0.016 * hs * jw, bone="Head"),  # jaw
-            RoundCone(P(-0.056 * jw, -0.030, -0.012), P(-0.023 * jw, -0.100, 0.055), 0.022 * hs * jw, 0.016 * hs * jw, bone="Head"),
-            Ellipsoid(P(0, -0.103, 0.058), np.array([0.025, 0.019, 0.021]) * hs * jw, bone="Head"),            # chin
-            Ellipsoid(P(0.040, -0.022, 0.066), np.array([0.026, 0.020, 0.024]) * hs, bone="Head"),         # cheek
-            Ellipsoid(P(-0.040, -0.022, 0.066), np.array([0.026, 0.020, 0.024]) * hs, bone="Head"),
-            Ellipsoid(P(0, 0.024, 0.079), np.array([0.056, 0.014, 0.020]) * hs, bone="Head"),             # brow ridge
-            RoundCone(P(0, 0.004, 0.085), P(0, -0.030, 0.098), 0.0065 * hs * nz, 0.0102 * hs * nz, bone="Head"),  # nose
-            Ellipsoid(P(0.0105 * nz, -0.033, 0.089), np.array([0.0085, 0.0065, 0.008]) * hs * nz, bone="Head"),
-            Ellipsoid(P(-0.0105 * nz, -0.033, 0.089), np.array([0.0085, 0.0065, 0.008]) * hs * nz, bone="Head"),
-            Ellipsoid(P(0, -0.0525, 0.0835), np.array([0.0200, 0.0056, 0.0078]) * hs, bone="Head", name="lip_upper"),
-            Ellipsoid(P(0, -0.0632, 0.0810), np.array([0.0180, 0.0062, 0.0078]) * hs, bone="Head", name="lip_lower"),
+        self.cran_c, self.cran_r = P(0, 0.014, -0.010), np.array([0.082, 0.096, 0.097]) * hs
+        skull = [
+            Ellipsoid(self.cran_c, self.cran_r, bone="Head"),                                               # cranium
+            Ellipsoid(P(0, -0.034, 0.006), np.array([0.067 * jw, 0.070, 0.070]) * hs, bone="Head"),         # cheeks / lower face
+            Ellipsoid(P(0.034 * jw, -0.058, 0.016), np.array([0.030, 0.030, 0.036]) * hs, bone="Head"),     # jaw
+            Ellipsoid(P(-0.034 * jw, -0.058, 0.016), np.array([0.030, 0.030, 0.036]) * hs, bone="Head"),
+            Ellipsoid(P(0, -0.083, 0.038), np.array([0.026, 0.021, 0.023]) * hs * jw, bone="Head"),         # chin
+        ]
+        feats = [
+            RoundCone(P(0, 0.004, 0.078), P(0, -0.017, 0.087), 0.0060 * hs * nz, 0.0085 * hs * nz, bone="Head"),   # nose bridge
+            Sphere(P(0, -0.022, 0.089), 0.0105 * hs * nz, bone="Head"),                                     # round tip
+            Ellipsoid(P(0.0095 * nz, -0.026, 0.082), np.array([0.0072, 0.0058, 0.0066]) * hs * nz, bone="Head"),
+            Ellipsoid(P(-0.0095 * nz, -0.026, 0.082), np.array([0.0072, 0.0058, 0.0066]) * hs * nz, bone="Head"),
+            Ellipsoid(P(0, -0.0665, 0.0690), np.array([0.0135, 0.0042, 0.0050]) * hs, bone="Head", name="lip_lower"),
         ]
         ears = []
         for sgn in (1, -1):
-            R = rot_from_axes(x=(sgn * 1.0, 0, 0.42), y=(0, 1, 0.10))
-            ears.append(Ellipsoid(P(0.079 * sgn, -0.010, -0.010), np.array([0.0062, 0.030, 0.0185]) * hs, R=R, bone="Head", name="ear"))
-        self.eye_c = [P(0.032 * s, 0.002, 0.075) for s in (1, -1)]
-        self.eye_r = 0.0122 * hs
-        sockets = Union([Sphere(P(0.032 * s, 0.003, 0.080), 0.0150 * hs) for s in (1, -1)])
-        mouth = Ellipsoid(P(0, -0.0581, 0.089), np.array([0.0195, 0.0011, 0.010]) * hs)
-        lids = []
+            R = rot_from_axes(x=(sgn * 1.0, 0, 0.40), y=(0, 1, 0.10))
+            ears.append(Ellipsoid(P(0.084 * sgn, -0.010, -0.008), np.array([0.0068, 0.023, 0.0160]) * hs, R=R, bone="Head", name="ear"))
+        # big cartoon eyes
+        self.eye_c = [P(0.034 * s, 0.001, 0.064) for s in (1, -1)]
+        self.eye_r = 0.0168 * hs
+        lids, socks = [], []
+        self.eye_open = np.array([0.0172, 0.0100, 0.013]) * hs
+        self.lid_r = self.eye_r + 0.0016 * hs
         for s, c in zip((1, -1), self.eye_c):
-            ball = Sphere(c, self.eye_r + 0.0017 * hs)
-            Ro = rot_from_axes(x=(1, 0.10 * s, 0), z=(0, 0, 1))   # slight outward-up tilt
-            opening = Ellipsoid(c + np.array([0.0012 * s, 0.0012, self.eye_r]) * 1.0,
-                                np.array([0.0128, 0.0050, 0.0105]) * hs, R=Ro)
+            ball = Sphere(c, self.lid_r)
+            Ro = rot_from_axes(x=(1, 0.05 * s, 0), z=(0, 0, 1))
+            oc = c + np.array([0.0006 * s, 0.0012 * hs, self.eye_r])
+            opening = Ellipsoid(oc, self.eye_open, R=Ro)
+            # the socket is carved only inside the lid opening, so no crease forms around the eye
+            socks.append(Ellipsoid(oc, self.eye_open + 0.0006 * hs, R=Ro))
             front = HalfSpace((0, 0, -1), -(c[2] - 0.003))
             lids.append(Intersect([ball, Complement(opening), front], k=0.0012))
+        sockets = Union(socks)
         self.lid_field = Union(lids)
-        self.lip_prims = prims[11:13]
+        # mouth guide (used by build.py for the layered smile mesh)
+        self.mouth = dict(xe=0.0215, yc=-0.0445, sag=0.0058, r_mid=0.0047, r_end=0.0010, z=0.080)
+        self.lip_prims = [feats[4]]
         self.ear_prims = ears
-        base = Union(prims[:8], k=0.022)
-        feats = Union(prims[8:], k=0.004)
-        head = Union([base, feats], k=0.008)
+        base = Union(skull, k=0.036)
+        head = Union([base, Union(feats, k=0.005)], k=0.007)
         head = Union([head, Union(ears)], k=0.0045)
-        head = Subtract(head, sockets, k=0.005)
-        head = Union([head, self.lid_field], k=0.0035)
-        head = Subtract(head, mouth, k=0.002)
+        head = Subtract(head, sockets, k=0.002)
+        head = Union([head, self.lid_field], k=0.006)
         head.name = "head"
         self.hs = hs
         self.Hpt = P
