@@ -52,8 +52,8 @@ controls.minDistance = 0.5;
 controls.maxDistance = 7;
 
 const CAMS = {
-  three: [[1.3, 1.15, 4.3], [0, 0.97, 0]], front: [[0, 1.05, 4.6], [0, 0.97, 0]],
-  back: [[-1.2, 1.2, -4.3], [0, 0.97, 0]], side: [[4.5, 1.1, 0], [0, 0.97, 0]],
+  three: [[1.3, 1.06, 4.3], [0, 0.88, 0]], front: [[0, 0.96, 4.6], [0, 0.88, 0]],
+  back: [[-1.2, 1.11, -4.3], [0, 0.88, 0]], side: [[4.5, 1.01, 0], [0, 0.88, 0]],
   face: [[0.22, 0.02, 0.95], [0, 0, 0]], headside: [[0.9, 0.03, 0.3], [0, 0, 0]],
   torso: [[0.5, 0.1, 1.7], [0, 0, 0]], feet: [[0.6, 0.35, 1.1], [0, 0.08, 0]],
   hand: [[1.2, 1.1, 0.9], [0.5, 1.0, 0]],
@@ -71,7 +71,7 @@ function setCam(name) {
   if (!a && name !== 'feet' && name !== 'hand') {
     // full-body views: back off just enough to fit the avatar in the current aspect ratio
     const tv = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-    const d = Math.max(1.02 / tv, 0.72 / (tv * camera.aspect));
+    const d = Math.max(1.12 / tv, 0.72 / (tv * camera.aspect));
     const dir = new THREE.Vector3(p[0] - t[0], p[1] - t[1], p[2] - t[2]).normalize();
     p = [t[0] + dir.x * d, t[1] + dir.y * d, t[2] + dir.z * d];
   }
